@@ -29,7 +29,7 @@ const iconsBLue = [
 <template>
   <section class="flex flex-col p-3  text-white">
         <div>
-            <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-b-full rounded-br-full shadow-lg" />
+            <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-b-full rounded-full shadow-lg" />
         </div>
         <div class="text-center font-bold">
             <h3 class="text-2xl">Rexie N. Villanueva</h3>
@@ -47,6 +47,7 @@ const iconsBLue = [
       <ul class="space-y-3">
         <li @click="selectedView = 1; navToggle = false" class="flex space-x-2">
             <img :src="icons[0]" alt="icon" class="w-7" />
+
             <p>{{ text[0] }}</p>
         </li>
         <li @click="selectedView = 2; navToggle = false" class="flex space-x-2">
@@ -83,7 +84,7 @@ const iconsBLue = [
       </div>
       
       <!--Credentials-->
-      <div class="text-white text-[13px] px-2 py-2">
+      <div class="text-white text-[13px] px-2 py-2 text-center">
         <p>Design & Built by Rexie Villanueva</p> </br>
         <p>2025, All right reserved.</p>
       </div>

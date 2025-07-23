@@ -1,5 +1,25 @@
 <script setup>
-import Bg from '../../assets/icons/bg.jpg'
+    import Bg from '../../assets/icons/bg.jpg'
+    import { ref, onMounted } from 'vue'
+
+    const fullText = 'Welcome to my codebase'
+    const displayedText = ref('')
+
+    function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+    }
+
+    async function typeText() {
+    for (let i = 0; i <= fullText.length; i++) {
+        displayedText.value = fullText.slice(0, i)
+        await sleep(200)
+        }
+    }
+
+    onMounted(() => {
+        typeText()
+    })
+
 </script>
 
 <template>
@@ -11,7 +31,7 @@ import Bg from '../../assets/icons/bg.jpg'
         Date
     </div>
     <div class="mb-2">
-        <p class="text-2xl font-bold font-serif text-center text-amber-300">Welcome to my Codebase</p>
+        <p class="text-3xl font-bold font-serif text-center text-white text-shadow-black">{{ displayedText }}<span class="animate-pulse">|</span></p>
     </div>
   </div>
 </template>
