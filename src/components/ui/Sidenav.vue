@@ -55,22 +55,43 @@ const iconsBLue = [
             <p>{{ text[0] }}</p>
         </li>
 
-        <li @click="selectedView = 2; navToggle = false" class="flex space-x-2">
+        <li v-if="selectedView != 2" @click="selectedView = 2; navToggle = false" class="flex space-x-2">
             <img :src="icons[1]" alt="icon" class="w-7" />
             <p>{{ text[1] }}</p>
         </li>
-        <li @click="selectedView = 3; navToggle = false" class="flex space-x-2">
+        <li v-if="selectedView == 2" @click="selectedView = 2; navToggle = false" class="flex space-x-2 bg-gray-600">
+            <img :src="icons[1]" alt="icon" class="w-7" />
+            <p>{{ text[1] }}</p>
+        </li>
+
+        <li v-if="selectedView != 3" @click="selectedView = 3; navToggle = false" class="flex space-x-2">
             <img :src="icons[2]" alt="icon" class="w-7" />
             <p>{{ text[2] }}</p>
         </li>
-        <li @click="selectedView = 4; navToggle = false" class="flex space-x-2">
+        <li v-if="selectedView == 3" @click="selectedView = 3; navToggle = false" class="flex space-x-2 bg-gray-600">
+            <img :src="icons[2]" alt="icon" class="w-7" />
+            <p>{{ text[2] }}</p>
+        </li>
+
+        <li v-if="selectedView != 4" @click="selectedView = 4; navToggle = false" class="flex space-x-2">
             <img :src="icons[3]" alt="icon" class="w-7" />
             <p>{{ text[3] }}</p>
         </li>
-        <li @click="selectedView = 5; navToggle = false" class="flex space-x-2">
+        <li v-if="selectedView == 4" @click="selectedView = 4; navToggle = false" class="flex space-x-2 bg-gray-600">
+            <img :src="icons[3]" alt="icon" class="w-7" />
+            <p>{{ text[3] }}</p>
+        </li>
+
+
+        <li v-if="selectedView != 5" @click="selectedView = 5; navToggle = false" class="flex space-x-2">
             <img :src="icons[4]" alt="icon" class="w-7" />
             <p>{{ text[4] }}</p>
         </li>
+        <li v-if="selectedView == 5" @click="selectedView = 5; navToggle = false" class="flex space-x-2 bg-gray-600">
+            <img :src="icons[4]" alt="icon" class="w-7" />
+            <p>{{ text[4] }}</p>
+        </li>
+
       </ul>
     </div>
 
@@ -102,5 +123,6 @@ const iconsBLue = [
   ul li {
     padding: 5px;
     border-radius: 10px;
+    cursor: pointer;
   }
 </style>

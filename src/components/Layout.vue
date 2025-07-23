@@ -1,69 +1,73 @@
 <script setup>
-    import { ref } from 'vue'
+import { onMounted, watch } from 'vue'
+import { navToggle, selectedView } from '../utils'
 
-    import Home from './pages/Home.vue';
-    import About from './pages/About.vue';
-    import Achievments from './pages/Achievments.vue';
-    import Projects from './pages/Projects.vue';
-    import Blogs from './pages/Blogs.vue';
+import Home from './pages/Home.vue'
+import About from './pages/About.vue'
+import Achievments from './pages/Achievments.vue'
+import Projects from './pages/Projects.vue'
+import Blogs from './pages/Blogs.vue'
 
-    import Sidenav from './ui/Sidenav.vue';
-    import RightSection from './RightSection.vue';
-    import Nav from './ui/Nav.vue'
-    import SidebarMobile from './ui/SidebarMobile.vue';
+import Sidenav from './ui/Sidenav.vue'
+import Nav from './ui/Nav.vue'
+import SidebarMobile from './ui/SidebarMobile.vue'
+import RightSection from './RightSection.vue'
 
-    import { navToggle } from '../utils';
-    import { selectedView } from '../utils';
-    import { onMounted, watch } from 'vue'
+const views = {
+  1: Home,
+  2: About,
+  3: Achievments,
+  4: Projects,
+  5: Blogs
+}
 
-    watch(navToggle, (isOpen) => {
-    document.body.classList.toggle('overflow-hidden', isOpen)
+watch(navToggle, (isOpen) => {
+  document.body.classList.toggle('overflow-hidden', isOpen)
 })
 
+function closeNav() {
+  navToggle.value = false
+}
 </script>
 
 <template>
-    <!-- Nav for mobile -->
-    <div v-if="!navToggle" class="block md:hidden max-h-50 bg-gray-900">
-        <Nav />
-    </div>
+  <!-- Mobile Top Nav -->
+  <div v-if="!navToggle" class="block md:hidden max-h-50 bg-gray-900">
+    <Nav />
+  </div>
 
-    <!-- Sidebar for mobile -->
-    <div v-if="navToggle" class="w-10/12 h-screen bg-gray-700 shadow-lg rounded-r-3xl fixed z-50 md:hidden">
+  <!-- Mobile Sidebar -->
+  <div v-if="navToggle" class="fixed z-50 w-10/12 h-screen bg-gray-700 shadow-lg rounded-r-3xl md:hidden">
     <SidebarMobile />
-    </div>
+  </div>
 
-    <!-- Blur overlay -->
-    <div
+  <!-- Mobile Blur Overlay -->
+  <div
     v-if="navToggle"
-    @click="navToggle = false"
-    class="md:hidden fixed inset-0 backdrop-blur-sm bg-black/30 z-40"
-    ></div>
+    @click="closeNav"
+    class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
+  ></div>
 
-    <!-- Main layout -->
-    <section @click="navToggle = false" class="p-5 h-screen w-screen overflow-auto">
+  <!-- Main Layout -->
+  <section @click="closeNav" class="w-screen h-screen p-5 overflow-auto">
     <div class="grid grid-cols-12 gap-5">
-        <!-- Sidebar (desktop only) -->
-        <div class=" bg-gray-800 hidden md:block rounded-2xl col-span-12 md:col-span-3">
-            <Sidenav />
-        </div>
+      <!-- Desktop Sidebar -->
+      <div class="hidden col-span-12 bg-gray-800 rounded-2xl md:col-span-3 md:block">
+        <Sidenav />
+      </div>
 
-        <!-- Main + Right -->
-        <div class="h-screen rounded-2xl col-span-12 md:col-span-9 overflow-y-auto">
-            <div class="grid grid-cols-12 space-x-3">
-                <div class="col-span-12 md:col-span-8">
-                    <Home v-if="selectedView == 1" />
-                    <About v-if="selectedView == 2" />
-                    <Achievments v-if="selectedView == 3" />
-                    <Projects v-if="selectedView == 4" />
-                    <Blogs v-if="selectedView == 5" />
-                </div>
+      <!-- Main Content + Right Section -->
+      <div class="col-span-12 h-screen overflow-y-auto rounded-2xl md:col-span-9">
+        <div class="grid grid-cols-12 space-x-3">
+          <div class="col-span-12 md:col-span-8">
+            <component :is="views[selectedView]" />
+          </div>
 
-                <div class="hidden md:block col-span-12 md:col-span-4">
-                    <RightSection />
-                </div>
-            </div>
+          <div class="hidden col-span-12 md:col-span-4 md:block">
+            <RightSection />
+          </div>
         </div>
+      </div>
     </div>
-    </section>
+  </section>
 </template>

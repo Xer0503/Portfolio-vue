@@ -1,6 +1,7 @@
 <script setup>
     import Welcome from '../ui/Welcome.vue';
     import Career from '../ui/Career.vue';
+    import Expert from '../ui/Expert.vue'
 </script>
 
 <template>
@@ -14,6 +15,11 @@
         <!--Career Stat-->
         <div class="rounded-2xl bg-gray-800">
             <Career />
+        </div>
+
+        <!--Expertise-->
+        <div class="rounded-2xl bg-gray-800">
+            <Expert />
         </div>
 
         <!--Feautured-->

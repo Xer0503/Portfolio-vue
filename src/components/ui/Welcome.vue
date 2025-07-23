@@ -27,11 +27,8 @@
     class="bg-cover bg-center flex flex-col h-full text-white justify-between py-8 px-5 rounded-2xl"
     :style="{ backgroundImage: `url(${Bg})` }"
   >
-    <div>
-        Date
-    </div>
-    <div class="mb-2">
-        <p class="text-3xl font-bold font-serif text-center text-white text-shadow-black">{{ displayedText }}<span class="animate-pulse">|</span></p>
+    <div class="my-auto">
+        <p class="text-3xl font-bold font-serif text-center text-white text-shadow-2xl">{{ displayedText }}<span class="animate-pulse">|</span></p>
     </div>
   </div>
 </template>
