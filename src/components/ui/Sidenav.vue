@@ -27,7 +27,7 @@ const iconsBLue = [
 </script>
 
 <template>
-  <section class="flex flex-col p-3  text-white">
+  <section class="flex flex-col p-3 text-white">
         <div>
             <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-b-full rounded-full shadow-lg" />
         </div>
@@ -45,11 +45,16 @@ const iconsBLue = [
   <section class="flex flex-col">
     <div class="justify-start px-10 text-white">
       <ul class="space-y-3">
-        <li @click="selectedView = 1; navToggle = false" class="flex space-x-2">
+        <li v-if="selectedView != 1" @click="selectedView = 1; navToggle = false" class="flex space-x-2">
             <img :src="icons[0]" alt="icon" class="w-7" />
-
             <p>{{ text[0] }}</p>
         </li>
+
+        <li v-if="selectedView == 1" @click="selectedView = 1; navToggle = false" class="flex space-x-2 bg-gray-600">
+            <img :src="icons[0]" alt="icon" class="w-7" />
+            <p>{{ text[0] }}</p>
+        </li>
+
         <li @click="selectedView = 2; navToggle = false" class="flex space-x-2">
             <img :src="icons[1]" alt="icon" class="w-7" />
             <p>{{ text[1] }}</p>
@@ -69,7 +74,7 @@ const iconsBLue = [
       </ul>
     </div>
 
-    <div class="flex flex-col p-3 mt-25">
+    <div class="flex flex-col p-3 justify-end">
       <!--Darkmode-->
       <div class="flex justify-between items-center text-white bg-gray-600 px-2 py-2 rounded-[10px]">
         <span class="flex space-x-2">
@@ -92,3 +97,10 @@ const iconsBLue = [
     <!--End of Footer-->
   </section>
 </template>
+
+<style>
+  ul li {
+    padding: 5px;
+    border-radius: 10px;
+  }
+</style>
