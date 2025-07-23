@@ -37,9 +37,15 @@ function closeNav() {
   </div>
 
   <!-- Mobile Sidebar -->
-  <div v-if="navToggle" class="fixed z-50 w-10/12 h-screen bg-gray-700 shadow-lg rounded-r-3xl md:hidden">
-    <SidebarMobile />
-  </div>
+  <transition name="slide">
+    <div
+    v-if="navToggle"
+    class="fixed z-50 w-10/12 h-screen bg-gray-700 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out transform translate-x-0"
+    >
+        <SidebarMobile />
+    </div>
+   </transition>
+
 
   <!-- Mobile Blur Overlay -->
   <div
@@ -71,3 +77,29 @@ function closeNav() {
     </div>
   </section>
 </template>
+
+<style>
+.slide-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-enter-to {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.slide-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slide-leave-from {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.slide-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-leave-active {
+  transition: all 0.3s ease;
+}
+</style>
