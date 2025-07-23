@@ -1,54 +1,57 @@
 <script setup>
-    import Profile from './ui/Profile.vue'
+    import { ref } from 'vue'
     import Sidenav from './ui/Sidenav.vue';
+    import MiddleSection from './MiddleSection.vue';
+    import RightSection from './RightSection.vue';
+    import Nav from './ui/Nav.vue'
+    import SidebarMobile from './ui/SidebarMobile.vue';
+
+    import { navToggle } from '../utils';
+    import { onMounted, watch } from 'vue'
+
+    watch(navToggle, (isOpen) => {
+    document.body.classList.toggle('overflow-hidden', isOpen)
+})
+
 </script>
 
 <template>
-    <!--Main Layout-->
-    <section class="p-5 h-screen w-screen">
-        <div class="grid grid-cols-12 gap-5">
-            <!--Left Sidebar Section-->
-            <div class="h-screen bg-gray-800 rounded-2xl col-span-12 md:col-span-4">
-                <Profile />
-                <Sidenav />
-            </div>
-            <!--End Left Sidebar-->
+    <!-- Nav for mobile -->
+    <div v-if="!navToggle" class="block md:hidden max-h-50 bg-gray-900">
+    <Nav />
+    </div>
 
-            <!--Middle Section-->
-            <div class="h-screen rounded-2xl col-span-12 md:col-span-4 space-y-2">
-                <!--Welcome Card-->
-                <div class="h-5/12 rounded-2xl bg-gray-800">
-                
-                </div>
+    <!-- Sidebar for mobile -->
+    <div v-if="navToggle" class="w-9/12 bg-gray-700 shadow-lg rounded-r-3xl fixed z-50 md:hidden">
+    <SidebarMobile />
+    </div>
 
-                <!--Career Stat-->
-                <div class="h-2/12 rounded-2xl bg-gray-800">
-                </div>
+    <!-- Blur overlay -->
+    <div
+    v-if="navToggle"
+    @click="navToggle = false"
+    class="fixed inset-0 backdrop-blur-sm bg-black/30 z-40"
+    ></div>
 
-                <!--Feautured-->
-                <div class="h-5/12 rounded-2xl bg-gray-800">
-                </div>
-            </div>
-            <!--End Middle -->
-
-            <!--Right Sidebar-->
-            <div class="h-screen rounded-2xl col-span-12 md:col-span-4 space-y-2">
-                <!--Skills-->
-                <div class="h-3/12 rounded-2xl bg-gray-800">
-                
-                </div>
-
-                <!--Expertise-->
-                <div class="h-5/12 rounded-2xl bg-gray-800">
-                
-                </div>
-
-                <!--Contacts-->
-                <div class="h-3/12 rounded-2xl bg-gray-800">
-                
-                </div>
-            </div>
-            <!--End of Right Sidebar-->
+    <!-- Main layout -->
+    <section @click="navToggle = false" class="p-5 h-screen w-screen overflow-auto">
+    <div class="grid grid-cols-12 gap-5">
+        <!-- Sidebar (desktop only) -->
+        <div class="h-full bg-gray-800 hidden md:block rounded-2xl col-span-12 md:col-span-3">
+        <Sidenav />
         </div>
+
+        <!-- Main + Right -->
+        <div class="h-screen rounded-2xl col-span-12 md:col-span-9 overflow-y-auto">
+            <div class="grid grid-cols-12 space-x-3">
+                <div class="col-span-12 md:col-span-8">
+                <MiddleSection />
+                </div>
+                <div class="col-span-12 md:col-span-4">
+                <RightSection />
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
 </template>
