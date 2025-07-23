@@ -1,8 +1,7 @@
 <script setup>
+
 </script>
 
 <template>
-    <section>
-        About HEre
-    </section>
+    
 </template>

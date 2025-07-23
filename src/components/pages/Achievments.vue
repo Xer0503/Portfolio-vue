@@ -3,6 +3,6 @@
 
 <template>
     <section>
-        About HEre
+        Achievments here
     </section>
 </template>

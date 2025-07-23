@@ -3,6 +3,6 @@
 
 <template>
     <section>
-        About HEre
+        Projects here
     </section>
 </template>

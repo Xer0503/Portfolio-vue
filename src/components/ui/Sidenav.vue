@@ -12,6 +12,8 @@ import BlogBlue from '../../assets/icons/blog-blue.svg'
 import P from '../../assets/profile.jpg'
 
 import { selectedIcon } from '../../icon'
+import { selectedView } from '../../utils'
+import { navToggle } from '../../utils'
 
 const text = ['Home', 'About', 'Achivements', 'Projects', 'Blogs']
 const icons = [
@@ -27,7 +29,7 @@ const iconsBLue = [
 <template>
   <section class="flex flex-col p-3  text-white">
         <div>
-            <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-b-full rounded-br-full shadow border-2" />
+            <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-b-full rounded-br-full shadow-lg" />
         </div>
         <div class="text-center font-bold">
             <h3 class="text-2xl">Rexie N. Villanueva</h3>
@@ -43,23 +45,23 @@ const iconsBLue = [
   <section class="flex flex-col">
     <div class="justify-start px-10 text-white">
       <ul class="space-y-3">
-        <li class="flex space-x-2">
+        <li @click="selectedView = 1; navToggle = false" class="flex space-x-2">
             <img :src="icons[0]" alt="icon" class="w-7" />
             <p>{{ text[0] }}</p>
         </li>
-        <li class="flex space-x-2">
+        <li @click="selectedView = 2; navToggle = false" class="flex space-x-2">
             <img :src="icons[1]" alt="icon" class="w-7" />
             <p>{{ text[1] }}</p>
         </li>
-        <li class="flex space-x-2">
+        <li @click="selectedView = 3; navToggle = false" class="flex space-x-2">
             <img :src="icons[2]" alt="icon" class="w-7" />
             <p>{{ text[2] }}</p>
         </li>
-        <li class="flex space-x-2">
+        <li @click="selectedView = 4; navToggle = false" class="flex space-x-2">
             <img :src="icons[3]" alt="icon" class="w-7" />
             <p>{{ text[3] }}</p>
         </li>
-        <li class="flex space-x-2">
+        <li @click="selectedView = 5; navToggle = false" class="flex space-x-2">
             <img :src="icons[4]" alt="icon" class="w-7" />
             <p>{{ text[4] }}</p>
         </li>
