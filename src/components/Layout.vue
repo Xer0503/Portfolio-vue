@@ -66,7 +66,7 @@ function closeNav() {
 
       <!-- Main Content + Right Section -->
       <div class="col-span-12 h-screen px-2 py-2 md:p-5 overflow-y-auto md:col-span-9">
-        <div class="grid grid-cols-12">
+        <div class="grid grid-cols-12 gap-x-5">
           <div class="col-span-12 md:col-span-8">
             <component :is="views[selectedView]" />
           </div>
