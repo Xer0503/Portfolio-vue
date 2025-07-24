@@ -29,9 +29,12 @@ const toggles = {
         </div>
         <span>▼</span>
       </div>
-      <div v-if="toggles[1].value" class="text-md text-gray-300 py-2 text-justify">
-        I build responsive and dynamic websites using modern frontend tools like Vue.js and Tailwind CSS. For the backend, I use Laravel to manage APIs, authentication, and database interactions.
-      </div>
+      <div class="bg-gray-600 p-[0.3px]"></div>
+      <transition name="description">
+        <div v-if="toggles[1].value" class="text-md text-gray-300 py-2 text-justify">
+          I build responsive and dynamic websites using modern frontend tools like Vue.js and Tailwind CSS. For the backend, I use Laravel to manage APIs, authentication, and database interactions.
+        </div>
+      </transition>
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- Graphic Design -->
@@ -42,9 +45,12 @@ const toggles = {
         </div>
         <span>▼</span>
       </div>
-      <div v-if="toggles[2].value" class="text-md text-gray-300 py-2 text-justify">
-        I create engaging visual content including logos, banners, and UI assets using tools like Adobe Photoshop and Figma to support strong branding and user engagement.
-      </div>
+      <div class="bg-gray-600 p-[0.3px]"></div>
+      <transition name="description">
+        <div v-if="toggles[2].value" class="text-md text-gray-300 py-2 text-justify">
+          I create engaging visual content including logos, banners, and UI assets using tools like Adobe Photoshop and Figma to support strong branding and user engagement.
+        </div>
+      </transition>
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- Digital Marketing -->
@@ -55,9 +61,12 @@ const toggles = {
         </div>
         <span>▼</span>
       </div>
-      <div v-if="toggles[3].value" class="text-md text-gray-300 py-2 text-justify">
-        I utilize SEO strategies, social media engagement, and content marketing to increase online visibility and drive user traffic to digital platforms.
-      </div>
+      <div class="bg-gray-600 p-[0.3px]"></div>
+      <transition name="description">
+        <div v-if="toggles[3].value" class="text-md text-gray-300 py-2 text-justify">
+          I utilize SEO strategies, social media engagement, and content marketing to increase online visibility and drive user traffic to digital platforms.
+        </div>
+      </transition>
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- UI / UX Design -->
@@ -68,9 +77,12 @@ const toggles = {
         </div>
         <span>▼</span>
       </div>
-      <div v-if="toggles[4].value" class="text-md text-gray-300 py-2 text-justify">
-        I design intuitive interfaces and smooth user experiences by applying design thinking principles and prototyping in Figma and Adobe XD.
-      </div>
+      <div class="bg-gray-600 p-[0.3px]"></div>
+      <transition name="description">
+        <div v-if="toggles[4].value" class="text-md text-gray-300 py-2 text-justify">
+          I design intuitive interfaces and smooth user experiences by applying design thinking principles and prototyping in Figma and Adobe XD.
+        </div>
+      </transition>
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- Data Management -->
@@ -81,9 +93,12 @@ const toggles = {
         </div>
         <span>▼</span>
       </div>
-      <div v-if="toggles[5].value" class="text-md text-gray-300 py-2 text-justify">
-        I manage and organize structured data using Laravel with MySQL or SQLite, ensuring data integrity, secure storage, and optimized queries.
-      </div>
+      <div class="bg-gray-600 p-[0.3px]"></div>
+      <transition name="description">
+        <div v-if="toggles[5].value" class="text-md text-gray-300 py-2 text-justify">
+          I manage and organize structured data using Laravel with MySQL or SQLite, ensuring data integrity, secure storage, and optimized queries.
+        </div>
+      </transition>
       <div class="bg-gray-600 p-[0.3px]"></div>
 
     </div>
@@ -91,8 +106,32 @@ const toggles = {
 </template>
 
 <style scoped>
-h3 {
-  font-size: large;
-  font-weight: 600;
+  h3 {
+    font-size: large;
+    font-weight: 600;
+  }
+
+.description-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.description-enter-to {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.description-enter-active {
+  transition: all 0.4s ease;
+}
+
+.description-leave-from {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.description-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.description-leave-active {
+  transition: all 0.4s ease;
 }
 </style>

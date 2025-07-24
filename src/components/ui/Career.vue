@@ -48,7 +48,7 @@
                     <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
                         <span class="flex space-x-3">
                             <img :src="Technologies" alt="icons" class="w-15" />
-                            <h2 class="text-3xl font-bold">20</h2>
+                            <h2 class="text-3xl font-bold">10</h2>
                         </span>
                         <span>Technologies</span>
                     </div>

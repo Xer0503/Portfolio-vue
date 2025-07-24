@@ -2,6 +2,7 @@
     import Welcome from '../ui/Welcome.vue';
     import Career from '../ui/Career.vue';
     import Expert from '../ui/Expert.vue'
+    import Skill from '../ui/Skill.vue';
 </script>
 
 <template>
@@ -17,15 +18,16 @@
             <Career />
         </div>
 
+        <!--SkillSet-->
+        <div class="rounded-2xl bg-gray-800">
+           <Skill />
+        </div>
+        
         <!--Expertise-->
         <div class="rounded-2xl bg-gray-800">
             <Expert />
         </div>
 
-        <!--Feautured-->
-        <div class="h-5/12 rounded-2xl bg-gray-800">
-            
-        </div>
     </div>
     <!--End Middle -->
 </template>
