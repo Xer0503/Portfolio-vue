@@ -14,15 +14,15 @@ const toggles = {
   <section class="text-white">
     <!--Head Card-->
     <div class="flex space-x-2 px-3 py-2">
-      <span>🛠</span>
-      <h3 class="text-2xl font-bold">Expertise</h3>
+      <span>Logo</span>
+      <p class="font-bold text-2xl">Expertise</p>
     </div>
 
     <!--Body Card-->
     <div class="flex flex-col px-5 py-3">
 
       <!-- Web Development -->
-      <div @click="toggles[1].value = !toggles[1].value" class="flex justify-between">
+      <div @click="toggles[1].value = !toggles[1].value" class="flex justify-between p-3">
         <div class="flex space-x-2 cursor-pointer">
           <span>🌐</span>
           <h3> Web Development </h3>
@@ -38,7 +38,7 @@ const toggles = {
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- Graphic Design -->
-      <div @click="toggles[2].value = !toggles[2].value" class="flex justify-between">
+      <div @click="toggles[2].value = !toggles[2].value" class="flex justify-between p-3">
         <div class="flex space-x-2 cursor-pointer">
           <span>🎨</span>
           <h3> Graphic Design </h3>
@@ -54,7 +54,7 @@ const toggles = {
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- Digital Marketing -->
-      <div @click="toggles[3].value = !toggles[3].value" class="flex justify-between">
+      <div @click="toggles[3].value = !toggles[3].value" class="flex justify-between p-3">
         <div class="flex space-x-2 cursor-pointer">
           <span>📈</span>
           <h3> Digital Marketing </h3>
@@ -70,7 +70,7 @@ const toggles = {
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- UI / UX Design -->
-      <div @click="toggles[4].value = !toggles[4].value" class="flex justify-between">
+      <div @click="toggles[4].value = !toggles[4].value" class="flex justify-between p-3">
         <div class="flex space-x-2 cursor-pointer">
           <span>🧠</span>
           <h3> UI / UX Design </h3>
@@ -86,7 +86,7 @@ const toggles = {
       <div class="bg-gray-600 p-[0.3px]"></div>
 
       <!-- Data Management -->
-      <div @click="toggles[5].value = !toggles[5].value" class="flex justify-between">
+      <div @click="toggles[5].value = !toggles[5].value" class="flex justify-between p-3">
         <div class="flex space-x-2 cursor-pointer">
           <span>🗃</span>
           <h3> Data Management </h3>
@@ -134,4 +134,5 @@ const toggles = {
 .description-leave-active {
   transition: all 0.4s ease;
 }
+
 </style>

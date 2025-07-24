@@ -3,6 +3,7 @@
     import Career from '../ui/Career.vue';
     import Expert from '../ui/Expert.vue'
     import Skill from '../ui/Skill.vue';
+    import Contact from './aboutUI/Contact.vue';
 </script>
 
 <template>
@@ -28,6 +29,10 @@
             <Expert />
         </div>
 
+        <!--Contacts-->
+        <div class="rounded-t-2xl bg-gray-800">
+            <Contact />
+        </div>
     </div>
     <!--End Middle -->
 </template>

@@ -18,7 +18,8 @@ const logos = [
 
 <template>
   <div class="overflow-hidden whitespace-nowrap relative py-4">
-    <div class="flex flex-col justify-between items-start py-2 px-3">
+    <div class="flex items-start py-2 px-3">
+        <span>logo</span>
         <h2 class="text-2xl font-bold text-white">Tech Stack</h2>
     </div>
 

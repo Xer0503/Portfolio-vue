@@ -1,27 +1,25 @@
 <script setup>
-    import Profile from '../../../assets/profile.jpg'
-    import Background from '../../../assets/icons/bg.jpg'
+    import Profile from '/profile.png'
 </script>
 
 <template>
-    <div class="bg-gray-800 flex flex-col w-full rounded-md">
-        <div
-            class="bg-cover bg-center flex flex-col h-[100px] md:h-[275px] text-white justify-between py-20 px-5 rounded-t-2xl"
-            :style="{ backgroundImage: `url(${Background})` }"
-        >
+    <div class="relative w-full h-100 rounded-2xl overflow-hidden">
+        <div class="bg-[url('/bg.jpg')] bg-cover h-12/12 bg-center z-5"></div>
+        <div class="absolute top-9 left-10 z-20">
+            <p class="font-bold text-[35px] text-white">Rexie Villanueva</p>
         </div>
-        <div class="flex justify-between space-x-10 items-center px-5">
-            <div class="w-9/12 text-center">
-                <button class="bg-gray-900 text-md text-white px-6 rounded-[10px] py-2 mt-auto">Message Me</button>
-            </div>
-            <div class="mt-[-80px] md:mt-[-150px]">
-                <img :src="Profile" alt="Profile Picture" loading="lazy" class="rounded-full outline-4 outline-gray-800">
-            </div>
+        <div class="absolute top-20 left-13 z-20">
+            <p class="font-bold text-md text-gray-200 underline underline-offset-5">Fullstack Developer</p>
         </div>
-
-        <div class="flex flex-col justify-end items-end px-5 my-5">
-            <p class="text-white font-bold text-2xl underline underline-offset-4 md:mx-auto">Rexie Villanueva</p>
-            <p class="text-gray-500 mr-5 md:mx-auto">FullStack Developer</p>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+            <button class="px-5 py-2 rounded-2xl bg-gray-900 text-white hover:bg-gray-950 shadow-sm">
+                <span>--></span>
+                Message Me
+            </button>
         </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-100"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-40"></div>
+        <img :src="Profile" alt="Profile" class="h-10/12 md:h-6/12 absolute z-25 bottom-0 right-0 left-25 md:bottom-30" />
+        <div class="absolute z-28 inset-0 bg-gradient-to-t from-black to-transparent opacity-40"></div>
     </div>
 </template>
