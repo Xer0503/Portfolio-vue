@@ -19,7 +19,7 @@
         </div>
 
         <!--SkillSet-->
-        <div class="rounded-2xl bg-gray-800">
+        <div class="md:hidden rounded-2xl bg-gray-800">
            <Skill />
         </div>
         

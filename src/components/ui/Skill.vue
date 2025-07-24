@@ -43,6 +43,6 @@ const logos = [
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 20s linear infinite;
 }
 </style>

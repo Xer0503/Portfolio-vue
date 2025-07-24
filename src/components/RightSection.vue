@@ -1,12 +1,13 @@
 <script setup>
+    import Skill from './ui/Skill.vue';
 </script>
 
 <template>
     <!--Right Sidebar-->
     <div class="h-screen rounded-2xl col-span-12 md:col-span-4 space-y-2">
         <!--Skills-->
-        <div class="h-3/12 rounded-2xl bg-gray-800">
-        
+        <div class="rounded-2xl bg-gray-800">
+            <skill />
         </div>
 
         <!--Expertise-->
