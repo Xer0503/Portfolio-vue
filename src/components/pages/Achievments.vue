@@ -1,8 +1,9 @@
 <script setup>
+    import NotFound from '../ui/NotFound.vue'
 </script>
 
 <template>
     <section>
-        Achievments here
+        <NotFound />
     </section>
 </template>
