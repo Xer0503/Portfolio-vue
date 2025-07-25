@@ -73,10 +73,9 @@
         <!--End of Card body-->
 
         <!---->
-        <div v-if="selectCareer > 0" class="black opacity-50 absolute inset-0 z-10 h-screen">
-        </div>
+        <div v-if="selectCareer > 0" class="fixed inset-0 z-40 bg-black opacity-50 h-screen"></div>
         <transition name="pop">
-        <div v-if="selectCareer > 0" class="w-full h-full flex flex-col bg-gray-950 rounded-2xl absolute inset-0 z-20">
+        <div v-if="selectCareer > 0" class="w-full h-full flex flex-col bg-gray-950 rounded-2xl absolute inset-0 z-50">
             <div class="flex justify-between items-center px-5 py-2">
                 <span>
                     <p class="text-white font-bold text-2xl">Technologies</p>
