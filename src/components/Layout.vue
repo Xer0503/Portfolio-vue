@@ -41,7 +41,7 @@ function closeNav() {
     <transition name="slide">
       <div
       v-if="navToggle"
-      class="absolute top-0 z-50 w-10/12 h-screen bg-gray-700 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out transform translate-x-0"
+      class="fixed top-0 z-50 w-10/12 h-screen bg-gray-700 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out transform translate-x-0"
       >
           <SidebarMobile />
       </div>
