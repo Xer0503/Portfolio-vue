@@ -15,6 +15,7 @@ import ProjectBlue from '../../assets/icons/folder-blue.svg'
 import Blog from '../../assets/icons/blog.svg'
 import BlogBlue from '../../assets/icons/blog-blue.svg'
 import P from '../../assets/profile.jpg'
+import { selectCareer } from '../../utils'
 
 // Theme toggle
 const dark = ref(true)
@@ -68,7 +69,7 @@ const navItems = [
         <li
           v-for="item in navItems"
           :key="item.id"
-          @click="selectedView = item.id; navToggle = false"
+          @click="selectedView = item.id; navToggle = false; selectCareer = 0" 
           class="flex space-x-2 items-center p-2 rounded-lg cursor-pointer"
           :class="{ 'bg-gray-600': selectedView === item.id }"
         >

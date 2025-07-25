@@ -31,7 +31,7 @@
         <!--Card Body-->
         <div>
             <div class="grid grid-cols-2 gap-2 text-white">
-                <div @click="selectCareer = 1" class="rounded-2xl bg-gray-600 px-2 py-2 hover:bg-amber-300 hover:text-gray-950">
+                <div @click="selectCareer = 1" class="rounded-2xl bg-gray-600 px-2 py-2 cursor-pointer">
                     <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
                         <span class="flex space-x-3">
                             <img :src="Exp" alt="icons" class="w-15" />
@@ -40,7 +40,7 @@
                         <span>Experience</span>
                     </div>
                 </div>
-                <div @click="selectCareer = 2" class="rounded-2xl bg-gray-600 px-2 py-2 hover:bg-amber-300 hover:text-gray-950">
+                <div @click="selectCareer = 2" class="rounded-2xl bg-gray-600 px-2 py-2 cursor-pointer">
                     <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
                         <span class="flex space-x-3">
                             <img :src="Certificates" alt="icons" class="w-15" />
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div @click="selectCareer = 3" class="rounded-2xl bg-gray-600 px-2 py-2 hover:bg-amber-300 hover:text-gray-950">
+                <div @click="selectCareer = 3" class="rounded-2xl bg-gray-600 px-2 py-2 cursor-pointer">
                     <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
                         <span class="flex space-x-3">
                             <img :src="Projects" alt="icons" class="w-15" />
@@ -59,7 +59,7 @@
                         <span>Projects</span>
                     </div>
                 </div>
-                <div @click="selectCareer = 4" class="rounded-2xl bg-gray-600 px-2 py-2 hover:bg-amber-300 hover:text-gray-950">
+                <div @click="selectCareer = 4" class="rounded-2xl bg-gray-600 px-2 py-2 cursor-pointer">
                     <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
                         <span class="flex space-x-3">
                             <img :src="Technologies" alt="icons" class="w-15" />
@@ -78,7 +78,7 @@
         <transition name="pop">
         <div v-if="selectCareer > 0" class="w-full h-full bg-gray-950 rounded-2xl absolute inset-0 z-20">
             <div class="flex flex-col justify-center items-end">
-                <button @click="selectCareer=0" class="text-white rounded-full px-3 text-2xl mx-3 mt-2">x</button>
+                <button @click="selectCareer=0" class="text-white rounded-full px-3 text-2xl mx-3 mt-2 cursor-pointer">x</button>
             </div>
             <component :is="viewsStats[selectCareer]" />
         </div>
