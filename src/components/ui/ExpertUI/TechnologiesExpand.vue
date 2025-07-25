@@ -17,7 +17,7 @@ const logos = [
 </script>
 
 <template>
-  <section class="py-6 bg-gray-100 dark:bg-gray-900 rounded-b-2xl">
+  <section class="py-6 dark:bg-gray-900 rounded-b-2xl">
     <div class="flex flex-wrap justify-center gap-6 px-4">
       <div
         v-for="(logo, index) in logos"
