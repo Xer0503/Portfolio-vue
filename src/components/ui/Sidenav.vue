@@ -48,56 +48,58 @@ const navItems = [
 </script>
 
 <template>
-  <section class="flex flex-col p-3 text-white">
-    <div>
-      <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-full shadow-lg" />
-    </div>
-    <div class="text-center font-bold">
-      <h3 class="text-2xl">Rexie N. Villanueva</h3>
-      <h2 class="text-md">FullStack Developer</h2>
-    </div>
-    <div class="text-center px-8 my-5">
-      <button class="w-full py-1 bg-gray-900 rounded-2xl">
-        Resume
-      </button>
-    </div>
-  </section>
-
-  <section class="flex flex-col">
-    <div class="justify-start px-10 text-white">
-      <ul class="space-y-3">
-        <li
-          v-for="item in navItems"
-          :key="item.id"
-          @click="selectedView = item.id; navToggle = false; selectCareer = 0" 
-          class="flex space-x-2 items-center p-2 rounded-lg cursor-pointer"
-          :class="{ 'bg-gray-600': selectedView === item.id }"
-        >
-          <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-7" />
-          <p>{{ item.label }}</p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="flex flex-col p-3 justify-end mt-5">
-      <!-- Dark Mode Toggle -->
-      <div class="flex justify-between items-center text-white bg-gray-600 px-3 py-2 rounded-[10px]">
-        <span class="flex items-center space-x-2">
-          <span>🌓</span>
-          <p>Dark Mode</p>
-        </span>
-        <button @click="dark = !dark" class="px-3 py-1 text-sm bg-gray-800 rounded-full">
-          {{ dark ? 'On' : 'Off' }}
+  <div class="space-y-5">
+    <section class="flex flex-col px-2 pt-2 text-white">
+      <div>
+        <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-full shadow-lg" />
+      </div>
+      <div class="text-center font-bold">
+        <h3 class="text-2xl">Rexie N. Villanueva</h3>
+        <h2 class="text-md">FullStack Developer</h2>
+      </div>
+      <div class="text-center px-8 my-5">
+        <button class="w-full py-1 bg-gray-600 rounded-2xl">
+          Resume
         </button>
       </div>
-
-      <!-- Footer -->
-      <div class="text-white text-[13px] px-2 py-2 text-center mt-4">
-        <p>Design & Built by Rexie Villanueva</p>
-        <p>2025, All rights reserved.</p>
+    </section>
+  
+    <section class="flex flex-col">
+      <div class="justify-start px-10 text-white">
+        <ul class="space-y-3 md:space-y-1">
+          <li
+            v-for="item in navItems"
+            :key="item.id"
+            @click="selectedView = item.id; navToggle = false; selectCareer = 0" 
+            class="flex space-x-2 items-center p-2 rounded-lg cursor-pointer"
+            :class="{ 'bg-gray-600': selectedView === item.id }"
+          >
+            <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5" />
+            <p>{{ item.label }}</p>
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
+  
+      <div class="flex flex-col px-10 h-full py-5">
+        <!-- Dark Mode Toggle -->
+        <div class="flex justify-between items-center text-white bg-gray-600 px-3 py-2 rounded-[10px]">
+          <span class="flex items-center space-x-2">
+            <span>🌓</span>
+            <p>Dark Mode</p>
+          </span>
+          <button @click="dark = !dark" class="px-3 py-1 text-sm bg-gray-800 rounded-full">
+            {{ dark ? 'On' : 'Off' }}
+          </button>
+        </div>
+  
+        <!-- Footer -->
+        <div class="text-white text-[13px] text-center my-auto py-2">
+          <p>Design & Built by Rexie Villanueva</p>
+          <p>2025, All rights reserved.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style>

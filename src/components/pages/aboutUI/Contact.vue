@@ -8,7 +8,7 @@ const contacts = [
 </script>
 
 <template>
-  <section class="flex flex-col space-y-3 p-3">
+  <section class="flex flex-col space-y-3 p-3 rounded-2xl">
     <div class="flex space-x-2 text-white font-bold">
       <span>📬</span>
       <p class="text-2xl">Get in touch</p>

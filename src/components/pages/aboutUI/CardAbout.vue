@@ -6,7 +6,7 @@
     <div class="relative w-full h-100 rounded-2xl overflow-hidden">
         <div class="bg-[url('/bg.jpg')] bg-cover h-12/12 bg-center z-5"></div>
         <div class="absolute top-9 left-10 z-20">
-            <p class="font-bold text-[35px] text-white">Rexie Villanueva</p>
+            <p class="font-bold text-[35px] md:text-4xl text-white">Rexie Villanueva</p>
         </div>
         <div class="absolute top-20 left-13 md:left-25 z-20">
             <p class="font-bold text-md text-gray-200 underline underline-offset-5">Fullstack Developer</p>
@@ -21,7 +21,7 @@
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-100"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-40"></div>
-        <div class="absolute z-25 bottom-0 right-0 left-25 md:bottom-0 md:right-0 md:left-55">
+        <div class="absolute z-25 bottom-0 right-0 left-25 md:bottom-0 md:right-0 md:left-80">
             <img :src="Profile" alt="Profile" class="h-10/12 md:h-3/12" />
         </div>
         <div class="absolute z-28 inset-0 bg-gradient-to-t from-black to-transparent opacity-40"></div>

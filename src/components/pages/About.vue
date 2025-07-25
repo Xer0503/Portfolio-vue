@@ -20,13 +20,13 @@
                 <AboutInfo />
             </div>
             
-            <!--Skill-->
+            <!--Skill
             <div class="rounded-2xl bg-gray-900 mt-2 md:hidden">
                 <Skill />
             </div>
-
+            -->
             <!--Contact Info-->
-            <div class="rounded-t-2xl bg-gray-900 mt-2">
+            <div class="rounded-2xl bg-gray-900 mt-2">
                 <Contact />
             </div>
         </div>
