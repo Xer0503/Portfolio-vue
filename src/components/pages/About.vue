@@ -6,7 +6,7 @@
 </script>
 
 <template>
-    <section id="top">
+    <section>
         <!--Middle Section-->
         <div class="rounded-2xl col-span-12 md:col-span-4">
             

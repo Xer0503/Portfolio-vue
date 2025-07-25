@@ -38,7 +38,7 @@ function closeNav() {
 <template>
   <div class="relative overflow-hidden">
     <!-- Top Nav (Mobile Only) -->
-    <div class="w-screen md:hidden z-40 bg-gray-900 max-h-50">
+    <div class="w-screen md:hidden z-40 bg-gray-900 max-h-50" id="top">
       <Nav />
     </div>
 
