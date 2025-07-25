@@ -58,7 +58,7 @@ const icon = [
         <div @click="toggles[skill.id].value = !toggles[skill.id].value" class="flex justify-between p-3 cursor-pointer" id="title">
           <div class="flex space-x-2">
             <span>{{ skill.emoji }}</span>
-            <p class="md:text-2xl font-semibold">{{ skill.title }}</p>
+            <p class="md:text-lg font-bold">{{ skill.title }}</p>
           </div>
           <transition name="dropUp">
               <span>
@@ -71,7 +71,7 @@ const icon = [
         </a>
         <div class="bg-gray-600 p-[0.3px]"></div>
         <transition name="description">
-          <div v-if="toggles[skill.id].value" id="desc" class="text-md md:text-2xl text-gray-300 py-2 text-justify">
+          <div v-if="toggles[skill.id].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
             {{ skill.description }}
           </div>
         </transition>

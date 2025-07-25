@@ -37,9 +37,8 @@ function closeNav() {
 
 <template>
   <div class="relative overflow-hidden">
-
     <!-- Top Nav (Mobile Only) -->
-    <div class="w-screen fixed md:hidden z-40 bg-gray-900 max-h-50">
+    <div class="w-screen md:hidden z-40 bg-gray-900 max-h-50">
       <Nav />
     </div>
 
@@ -61,22 +60,21 @@ function closeNav() {
       class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
     ></div>
 
-    <!-- Main Layout -->
-    <section @click="closeNav" class="px-2 py-2 overflow-auto mt-15 md:mt-0">
-      <div class="grid grid-cols-12 gap-3">
-
-        <!-- Sidebar (Desktop Only) -->
-        <div class="hidden md:block md:col-span-3 bg-gray-900 rounded-2xl">
+    <!-- Desktop View -->
+    <section class="grid grid-cols-12 gap-x-2 md:h-screen py-2">
+      <!-- Sidebar -->
+      <div class="hidden md:flex md:col-span-3 bg-gray-900">
+        <div class="sticky top-0 w-full">
           <Sidenav />
         </div>
-
-        <!-- Main Content Area -->
-        <div class="col-span-12 md:col-span-9 px-2 overflow-y-auto scroll-smooth">
-          <component :is="views[selectedView]" />
-        </div>
-
+      </div>
+      <!-- Main Content Area (Scrollable) -->
+      <div @click="closeNav" class="col-span-12 md:col-span-9 px-2 md:overflow-y-auto md:h-screen scroll-smooth">
+        <component :is="views[selectedView]" />
       </div>
     </section>
+
+
   </div>
 </template>
 
@@ -84,6 +82,10 @@ function closeNav() {
 
 html {
   scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
 }
 
 /* Sidebar slide transition */

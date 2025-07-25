@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
-import { selectedView } from '../../utils'
-import { navToggle } from '../../utils'
+import { selectedView, navToggle, selectCareer } from '../../utils'
 
 // Icons
 import Home from '../../assets/icons/home.svg'
@@ -15,7 +14,6 @@ import ProjectBlue from '../../assets/icons/folder-blue.svg'
 import Blog from '../../assets/icons/blog.svg'
 import BlogBlue from '../../assets/icons/blog-blue.svg'
 import P from '../../assets/profile.jpg'
-import { selectCareer } from '../../utils'
 
 // Theme toggle
 const dark = ref(true)
@@ -41,21 +39,28 @@ watch(dark, (val) => {
 const navItems = [
   { id: 1, label: 'Home', icon: Home, iconBlue: HomeBlue },
   { id: 2, label: 'About', icon: About, iconBlue: AboutBlue },
-  { id: 3, label: 'Achivements', icon: Medal, iconBlue: MedalBlue },
+  { id: 3, label: 'Achievements', icon: Medal, iconBlue: MedalBlue },
   { id: 4, label: 'Projects', icon: Project, iconBlue: ProjectBlue },
   { id: 5, label: 'Blogs', icon: Blog, iconBlue: BlogBlue }
 ]
+
+// Wrapper functions for actions
+function handleNavClick(id) {
+  selectedView.value = id
+  navToggle.value = false
+  selectCareer.value = 0
+}
 </script>
 
 <template>
-  <div class="space-y-5">
+  <div class="flex flex-col h-screen">
     <section class="flex flex-col px-2 pt-2 text-white">
       <div>
-        <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 mx-auto mb-4 rounded-full shadow-lg" />
+        <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 md:w-20 mx-auto mb-4 rounded-full shadow-lg" />
       </div>
       <div class="text-center font-bold">
-        <h3 class="text-2xl">Rexie N. Villanueva</h3>
-        <h2 class="text-md">FullStack Developer</h2>
+        <p class="text-2xl md:text-md font-bold">Rexie Villanueva</p>
+        <p class="md:text-sm">FullStack Developer</p>
       </div>
       <div class="text-center px-8 my-5">
         <button class="w-full py-1 bg-gray-600 rounded-2xl">
@@ -63,46 +68,45 @@ const navItems = [
         </button>
       </div>
     </section>
-  
-    <section class="flex flex-col">
-      <div class="justify-start px-10 text-white">
-        <ul class="space-y-3 md:space-y-1">
+    <div class="px-5 text-white">
+      <ul class="space-y-3 md:space-y-1">
+        <a href="#top">
           <li
             v-for="item in navItems"
             :key="item.id"
-            @click="selectedView = item.id; navToggle = false; selectCareer = 0" 
+            @click="handleNavClick(item.id)"
             class="flex space-x-2 items-center p-2 rounded-lg cursor-pointer"
             :class="{ 'bg-gray-600': selectedView === item.id }"
           >
-            <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5" />
-            <p>{{ item.label }}</p>
+            <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5 md:w-4" />
+            <p class="text-sm">{{ item.label }}</p>
           </li>
-        </ul>
+        </a>
+      </ul>
+    </div>
+
+    <div class="flex flex-col px-5 w-full md:h-full justify-end mt-10">
+      <!-- Dark Mode Toggle -->
+      <div class="flex justify-between text-white bg-gray-600 px-3 py-2 rounded-[10px]">
+        <span class="flex items-center">
+          <span>🌓</span>
+          <p>Dark Mode</p>
+        </span>
+        <button @click="dark = !dark" class="px-3 py-1 text-sm bg-gray-800 rounded-full">
+          {{ dark ? 'On' : 'Off' }}
+        </button>
       </div>
-  
-      <div class="flex flex-col px-10 h-full py-5">
-        <!-- Dark Mode Toggle -->
-        <div class="flex justify-between items-center text-white bg-gray-600 px-3 py-2 rounded-[10px]">
-          <span class="flex items-center space-x-2">
-            <span>🌓</span>
-            <p>Dark Mode</p>
-          </span>
-          <button @click="dark = !dark" class="px-3 py-1 text-sm bg-gray-800 rounded-full">
-            {{ dark ? 'On' : 'Off' }}
-          </button>
-        </div>
-  
-        <!-- Footer -->
-        <div class="text-white text-[13px] text-center my-auto py-2">
-          <p>Design & Built by Rexie Villanueva</p>
-          <p>2025, All rights reserved.</p>
-        </div>
+      <!-- Footer -->
+      <div class="text-white text-[13px] text-center py-2">
+        <p>Design & Built by Rexie Villanueva</p>
+        <p>2025, All rights reserved.</p>
       </div>
-    </section>
+    </div>
   </div>
+
 </template>
 
-<style>
+<style scoped>
 ul li {
   transition: background 0.3s ease;
 }

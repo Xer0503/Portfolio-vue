@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative h-[40vh] rounded-2xl overflow-hidden text-white">
+  <div class="relative h-[40vh] rounded-2xl overflow-hidden text-white" id="top">
 
     <!-- Background image -->
     <div class="absolute inset-0 z-10 bg-center bg-cover bg-no-repeat bg-[url('/bg.jpg')]"></div>
