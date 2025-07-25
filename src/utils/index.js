@@ -4,3 +4,5 @@ export const navToggle = ref(true);
 export const selectedView = ref(1);
 
 export const selectMenu = ref(false);
+
+export const selectCareer = ref(0);

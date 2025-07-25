@@ -14,7 +14,7 @@
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
             <button class="px-5 py-2 rounded-2xl bg-gray-900 text-white hover:bg-gray-950 shadow-sm">
                 <span>--></span>
-                Message Me
+                Send Message
             </button>
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-100"></div>

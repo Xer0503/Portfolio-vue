@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
+
 const toggles = {
     1 : ref(false),
     2 : ref(false),
@@ -8,10 +9,12 @@ const toggles = {
     4 : ref(false),
     5 : ref(false)
 }
+
+
 </script>
 
 <template>
-  <section class="text-white">
+  <section class="text-white relative overflow-hidden">
     <!--Head Card-->
     <div class="flex space-x-2 px-3 py-2">
       <span>Logo</span>
@@ -100,8 +103,8 @@ const toggles = {
         </div>
       </transition>
       <div class="bg-gray-600 p-[0.3px]"></div>
-
     </div>
+
   </section>
 </template>
 
@@ -112,27 +115,23 @@ const toggles = {
   }
 
 .description-enter-from {
-  transform: translateX(-100%);
-  opacity: 0;
+  transform: scale(0);
 }
 .description-enter-to {
-  transform: translateX(0%);
-  opacity: 1;
+  transform: scale(1);
 }
 .description-enter-active {
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .description-leave-from {
-  transform: translateX(0%);
-  opacity: 1;
+  transform: scale(1);
 }
 .description-leave-to {
-  transform: translateX(-100%);
-  opacity: 0;
+  transform: scale(0);
 }
 .description-leave-active {
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 </style>
