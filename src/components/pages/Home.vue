@@ -9,6 +9,11 @@
 <template>
     <!--Middle Section-->
     <div class="h-screen rounded-2xl col-span-12 md:col-span-4 space-y-2">
+        <!--SkillSet-->
+        <div class="md:hidden rounded-2xl bg-gray-800">
+           <Skill />
+        </div>
+        
         <!--Welcome Card-->
         <div class="h-5/12 rounded-2xl bg-gray-800">
             <Welcome />
@@ -19,10 +24,6 @@
             <Career />
         </div>
 
-        <!--SkillSet-->
-        <div class="md:hidden rounded-2xl bg-gray-800">
-           <Skill />
-        </div>
         
         <!--Expertise-->
         <div class="rounded-2xl bg-gray-800">

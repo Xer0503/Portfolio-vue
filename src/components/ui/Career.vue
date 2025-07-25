@@ -17,6 +17,12 @@
         3 : ProjectExpand,
         4 : TechnologiesExpand
     }
+    const heading = {
+        1 : 'Experience',
+        2 : 'Certificates',
+        3 : 'Projects',
+        4 : 'Technologies'
+    }
 
 </script>
 
@@ -78,7 +84,7 @@
         <div v-if="selectCareer > 0" class="w-full h-full flex flex-col bg-gray-950 rounded-2xl absolute inset-0 z-50">
             <div class="flex justify-between items-center px-5 py-2">
                 <span>
-                    <p class="text-white font-bold text-2xl">Technologies</p>
+                    <p class="text-white font-bold text-2xl">{{ heading[selectCareer] }}</p>
                 </span>
                 <button @click="selectCareer=0" class="text-white rounded-full px-3 text-2xl mx-3 mt-2 cursor-pointer">x</button>
             </div>

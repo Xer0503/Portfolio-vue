@@ -34,7 +34,7 @@ const toggles = {
       </div>
       <div class="bg-gray-600 p-[0.3px]"></div>
       <transition name="description">
-        <div v-if="toggles[1].value" class="text-md text-gray-300 py-2 text-justify">
+        <div v-if="toggles[1].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
           I build responsive and dynamic websites using modern frontend tools like Vue.js and Tailwind CSS. For the backend, I use Laravel to manage APIs, authentication, and database interactions.
         </div>
       </transition>
@@ -50,7 +50,7 @@ const toggles = {
       </div>
       <div class="bg-gray-600 p-[0.3px]"></div>
       <transition name="description">
-        <div v-if="toggles[2].value" class="text-md text-gray-300 py-2 text-justify">
+        <div v-if="toggles[2].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
           I create engaging visual content including logos, banners, and UI assets using tools like Adobe Photoshop and Figma to support strong branding and user engagement.
         </div>
       </transition>
@@ -66,7 +66,7 @@ const toggles = {
       </div>
       <div class="bg-gray-600 p-[0.3px]"></div>
       <transition name="description">
-        <div v-if="toggles[3].value" class="text-md text-gray-300 py-2 text-justify">
+        <div v-if="toggles[3].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
           I utilize SEO strategies, social media engagement, and content marketing to increase online visibility and drive user traffic to digital platforms.
         </div>
       </transition>
@@ -82,7 +82,7 @@ const toggles = {
       </div>
       <div class="bg-gray-600 p-[0.3px]"></div>
       <transition name="description">
-        <div v-if="toggles[4].value" class="text-md text-gray-300 py-2 text-justify">
+        <div v-if="toggles[4].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
           I design intuitive interfaces and smooth user experiences by applying design thinking principles and prototyping in Figma and Adobe XD.
         </div>
       </transition>
@@ -98,7 +98,7 @@ const toggles = {
       </div>
       <div class="bg-gray-600 p-[0.3px]"></div>
       <transition name="description">
-        <div v-if="toggles[5].value" class="text-md text-gray-300 py-2 text-justify">
+        <div v-if="toggles[5].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
           I manage and organize structured data using Laravel with MySQL or SQLite, ensuring data integrity, secure storage, and optimized queries.
         </div>
       </transition>
@@ -115,23 +115,28 @@ const toggles = {
   }
 
 .description-enter-from {
-  transform: scale(0);
+  opacity: 0;
+  transform: scale(0.95);
 }
 .description-enter-to {
+  opacity: 1;
   transform: scale(1);
 }
-.description-enter-active {
-  transition: all 0.5s ease;
-}
-
 .description-leave-from {
+  opacity: 1;
   transform: scale(1);
 }
 .description-leave-to {
-  transform: scale(0);
+  opacity: 0;
+  transform: scale(0.95);
 }
+.description-enter-active,
 .description-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+}
+
+#desc{
+  padding: 5px 20px;
 }
 
 </style>
