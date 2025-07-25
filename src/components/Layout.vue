@@ -70,7 +70,7 @@ function closeNav() {
         </div>
 
         <!-- Main Content Area -->
-        <div class="col-span-12 md:col-span-9 px-2 h-screen overflow-y-auto">
+        <div class="col-span-12 md:col-span-9 px-2 h-screen overflow-y-auto scroll-smooth">
           <component :is="views[selectedView]" />
         </div>
 
@@ -80,6 +80,11 @@ function closeNav() {
 </template>
 
 <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Sidebar slide transition */
 .slide-enter-from {
   transform: translateX(-100%);

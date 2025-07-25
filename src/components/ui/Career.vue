@@ -37,56 +37,63 @@
         <!--Card Body-->
         <div>
             <div class="grid grid-cols-2 gap-2 md:gap-4 text-white md:px-5 md:py-2">
-                <div @click="selectCareer = 1" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                    <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                        <span class="flex space-x-3">
-                            <img :src="Exp" alt="icons" class="w-15" />
-                            <h2 class="text-3xl font-bold">0</h2>
-                        </span>
-                        <p class="text-md md:text-2xl">Experience</p>
+                <a href="#career">
+                    <div @click="selectCareer = 1" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
+                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
+                            <span class="flex space-x-3">
+                                <img :src="Exp" alt="icons" class="w-15" />
+                                <h2 class="text-3xl font-bold">0</h2>
+                            </span>
+                            <p class="text-md md:text-2xl">Experience</p>
+                        </div>
                     </div>
-                </div>
-                <div @click="selectCareer = 2" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                    <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                        <span class="flex space-x-3">
-                            <img :src="Certificates" alt="icons" class="w-15" />
-                            <h2 class="text-3xl font-bold">5</h2>
-                        </span>
-                        <p class="text-md md:text-2xl">Certificates</p>
-                    </div>
-                </div>
+                </a>
 
-                <div @click="selectCareer = 3" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                    <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                        <span class="flex space-x-3">
-                            <img :src="Projects" alt="icons" class="w-15" />
-                            <h2 class="text-3xl font-bold">20</h2>
-                        </span>
-                        <p class="text-md md:text-2xl">Projects</p>
+                <a href="#career">
+                    <div @click="selectCareer = 2" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
+                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
+                            <span class="flex space-x-3">
+                                <img :src="Certificates" alt="icons" class="w-15" />
+                                <h2 class="text-3xl font-bold">5</h2>
+                            </span>
+                            <p class="text-md md:text-2xl">Certificates</p>
+                        </div>
                     </div>
-                </div>
-                <div @click="selectCareer = 4" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                    <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                        <span class="flex space-x-3">
-                            <img :src="Technologies" alt="icons" class="w-15" />
-                            <h2 class="text-3xl font-bold">13</h2>
-                        </span>
-                        <p class="text-md md:text-2xl">Technologies</p>
+                </a>
+                <a href="#career">
+                    <div @click="selectCareer = 3" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
+                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
+                            <span class="flex space-x-3">
+                                <img :src="Projects" alt="icons" class="w-15" />
+                                <h2 class="text-3xl font-bold">20</h2>
+                            </span>
+                            <p class="text-md md:text-2xl">Projects</p>
+                        </div>
                     </div>
-                </div>
+                </a>
+                <a href="#career">
+                    <div @click="selectCareer = 4" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
+                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
+                            <span class="flex space-x-3">
+                                <img :src="Technologies" alt="icons" class="w-15" />
+                                <h2 class="text-3xl font-bold">13</h2>
+                            </span>
+                            <p class="text-md md:text-2xl">Technologies</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
         <!--End of Card body-->
 
         <!---->
-        <div v-if="selectCareer > 0" class="fixed inset-0 z-40 bg-black opacity-50 h-screen"></div>
+        <div @click="selectCareer = 0" v-if="selectCareer > 0" class="fixed inset-0 z-40 bg-black opacity-70 h-screen"></div>
         <transition name="pop">
-        <div v-if="selectCareer > 0" class="w-full h-full flex flex-col bg-gray-950 rounded-2xl absolute inset-0 z-50">
-            <div class="flex justify-between items-center px-5 py-2">
+        <div @click="selectCareer = 0" v-if="selectCareer > 0" class="w-full h-full flex flex-col bg-gray-950 rounded-2xl absolute inset-0 z-50">
+            <div class="flex items-center px-5 py-2">
                 <span>
                     <p class="text-white font-bold text-2xl">{{ heading[selectCareer] }}</p>
                 </span>
-                <button @click="selectCareer=0" class="text-white rounded-full px-3 text-2xl mx-3 mt-2 cursor-pointer">x</button>
             </div>
             <div class="h-full"> 
                 <component :is="viewsStats[selectCareer]" />

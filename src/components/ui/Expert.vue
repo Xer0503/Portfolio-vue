@@ -54,22 +54,24 @@ const icon = [
 
     <div class="flex flex-col px-5 py-3">
       <div v-for="skill in skills" :key="skill.id">
-        <div @click="toggles[skill.id].value = !toggles[skill.id].value" class="flex justify-between p-3 cursor-pointer">
+        <a href="#title">
+        <div @click="toggles[skill.id].value = !toggles[skill.id].value" class="flex justify-between p-3 cursor-pointer" id="title">
           <div class="flex space-x-2">
             <span>{{ skill.emoji }}</span>
-            <h3>{{ skill.title }}</h3>
+            <p class="md:text-2xl font-semibold">{{ skill.title }}</p>
           </div>
           <transition name="dropUp">
-            <span>
-              <img :src="toggles[skill.id].value ? icon[1].src : icon[0].src"
-                   :alt="toggles[skill.id].value ? icon[1].alt : icon[0].alt"
-                   class="w-5" />
-            </span>
-          </transition>
-        </div>
+              <span>
+                <img :src="toggles[skill.id].value ? icon[1].src : icon[0].src"
+                     :alt="toggles[skill.id].value ? icon[1].alt : icon[0].alt"
+                     class="w-5" />
+              </span>
+            </transition>
+          </div>
+        </a>
         <div class="bg-gray-600 p-[0.3px]"></div>
         <transition name="description">
-          <div v-if="toggles[skill.id].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
+          <div v-if="toggles[skill.id].value" id="desc" class="text-md md:text-2xl text-gray-300 py-2 text-justify">
             {{ skill.description }}
           </div>
         </transition>
