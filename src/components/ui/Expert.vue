@@ -1,110 +1,81 @@
 <script setup>
 import { ref } from 'vue'
 
+const skills = [
+  {
+    id: 1,
+    emoji: '🌐',
+    title: 'Web Development',
+    description: 'I build responsive and dynamic websites using modern frontend tools like Vue.js and Tailwind CSS. For the backend, I use Laravel to manage APIs, authentication, and database interactions.'
+  },
+  {
+    id: 2,
+    emoji: '🎨',
+    title: 'Graphic Design',
+    description: 'I create engaging visual content including logos, banners, and UI assets using tools like Adobe Photoshop and Figma to support strong branding and user engagement.'
+  },
+  {
+    id: 3,
+    emoji: '📈',
+    title: 'Digital Marketing',
+    description: 'I utilize SEO strategies, social media engagement, and content marketing to increase online visibility and drive user traffic to digital platforms.'
+  },
+  {
+    id: 4,
+    emoji: '🧠',
+    title: 'UI / UX Design',
+    description: 'I design intuitive interfaces and smooth user experiences by applying design thinking principles and prototyping in Figma and Adobe XD.'
+  },
+  {
+    id: 5,
+    emoji: '🗃',
+    title: 'Data Management',
+    description: 'I manage and organize structured data using Laravel with MySQL or SQLite, ensuring data integrity, secure storage, and optimized queries.'
+  }
+]
 
-const toggles = {
-    1 : ref(false),
-    2 : ref(false),
-    3 : ref(false),
-    4 : ref(false),
-    5 : ref(false)
-}
+const toggles = skills.reduce((acc, skill) => {
+  acc[skill.id] = ref(false)
+  return acc
+}, {})
 
-
+const icon = [
+  { src: '/icons/down.svg', alt: 'down' },
+  { src: '/icons/up.svg', alt: 'up' }
+]
 </script>
 
 <template>
   <section class="text-white relative overflow-hidden">
-    <!--Head Card-->
     <div class="flex space-x-2 px-3 py-2">
       <span>Logo</span>
       <p class="font-bold text-2xl">Expertise</p>
     </div>
 
-    <!--Body Card-->
     <div class="flex flex-col px-5 py-3">
-
-      <!-- Web Development -->
-      <div @click="toggles[1].value = !toggles[1].value" class="flex justify-between p-3">
-        <div class="flex space-x-2 cursor-pointer">
-          <span>🌐</span>
-          <h3> Web Development </h3>
+      <div v-for="skill in skills" :key="skill.id">
+        <div @click="toggles[skill.id].value = !toggles[skill.id].value" class="flex justify-between p-3 cursor-pointer">
+          <div class="flex space-x-2">
+            <span>{{ skill.emoji }}</span>
+            <h3>{{ skill.title }}</h3>
+          </div>
+          <transition name="dropUp">
+            <span>
+              <img :src="toggles[skill.id].value ? icon[1].src : icon[0].src"
+                   :alt="toggles[skill.id].value ? icon[1].alt : icon[0].alt"
+                   class="w-5" />
+            </span>
+          </transition>
         </div>
-        <span>▼</span>
+        <div class="bg-gray-600 p-[0.3px]"></div>
+        <transition name="description">
+          <div v-if="toggles[skill.id].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
+            {{ skill.description }}
+          </div>
+        </transition>
+        <div class="bg-gray-600 p-[0.3px]"></div>
       </div>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-      <transition name="description">
-        <div v-if="toggles[1].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
-          I build responsive and dynamic websites using modern frontend tools like Vue.js and Tailwind CSS. For the backend, I use Laravel to manage APIs, authentication, and database interactions.
-        </div>
-      </transition>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-
-      <!-- Graphic Design -->
-      <div @click="toggles[2].value = !toggles[2].value" class="flex justify-between p-3">
-        <div class="flex space-x-2 cursor-pointer">
-          <span>🎨</span>
-          <h3> Graphic Design </h3>
-        </div>
-        <span>▼</span>
-      </div>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-      <transition name="description">
-        <div v-if="toggles[2].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
-          I create engaging visual content including logos, banners, and UI assets using tools like Adobe Photoshop and Figma to support strong branding and user engagement.
-        </div>
-      </transition>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-
-      <!-- Digital Marketing -->
-      <div @click="toggles[3].value = !toggles[3].value" class="flex justify-between p-3">
-        <div class="flex space-x-2 cursor-pointer">
-          <span>📈</span>
-          <h3> Digital Marketing </h3>
-        </div>
-        <span>▼</span>
-      </div>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-      <transition name="description">
-        <div v-if="toggles[3].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
-          I utilize SEO strategies, social media engagement, and content marketing to increase online visibility and drive user traffic to digital platforms.
-        </div>
-      </transition>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-
-      <!-- UI / UX Design -->
-      <div @click="toggles[4].value = !toggles[4].value" class="flex justify-between p-3">
-        <div class="flex space-x-2 cursor-pointer">
-          <span>🧠</span>
-          <h3> UI / UX Design </h3>
-        </div>
-        <span>▼</span>
-      </div>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-      <transition name="description">
-        <div v-if="toggles[4].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
-          I design intuitive interfaces and smooth user experiences by applying design thinking principles and prototyping in Figma and Adobe XD.
-        </div>
-      </transition>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-
-      <!-- Data Management -->
-      <div @click="toggles[5].value = !toggles[5].value" class="flex justify-between p-3">
-        <div class="flex space-x-2 cursor-pointer">
-          <span>🗃</span>
-          <h3> Data Management </h3>
-        </div>
-        <span>▼</span>
-      </div>
-      <div class="bg-gray-600 p-[0.3px]"></div>
-      <transition name="description">
-        <div v-if="toggles[5].value" id="desc" class="text-md text-gray-300 py-2 text-justify">
-          I manage and organize structured data using Laravel with MySQL or SQLite, ensuring data integrity, secure storage, and optimized queries.
-        </div>
-      </transition>
-      <div class="bg-gray-600 p-[0.3px]"></div>
     </div>
-
   </section>
 </template>
 
@@ -137,6 +108,25 @@ const toggles = {
 
 #desc{
   padding: 5px 20px;
+}
+
+
+.dropUp-enter-from {
+  opacity: 0;
+}
+.dropUp-enter-to {
+  opacity: 1;
+}
+.dropUp-leave-from {
+  opacity: 1;
+}
+.dropUp-leave-to {
+  opacity: 0;
+}
+
+.dropUp-enter-active,
+.dropUp-leave-active {
+  transition: all 0.5s ease;
 }
 
 </style>
