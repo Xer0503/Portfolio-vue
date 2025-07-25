@@ -63,7 +63,7 @@
                     <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
                         <span class="flex space-x-3">
                             <img :src="Technologies" alt="icons" class="w-15" />
-                            <h2 class="text-3xl font-bold">10</h2>
+                            <h2 class="text-3xl font-bold">13</h2>
                         </span>
                         <span>Technologies</span>
                     </div>
@@ -76,11 +76,16 @@
         <div v-if="selectCareer > 0" class="black opacity-50 absolute inset-0 z-10 h-screen">
         </div>
         <transition name="pop">
-        <div v-if="selectCareer > 0" class="w-full h-full bg-gray-950 rounded-2xl absolute inset-0 z-20">
-            <div class="flex flex-col justify-center items-end">
+        <div v-if="selectCareer > 0" class="w-full h-full flex flex-col bg-gray-950 rounded-2xl absolute inset-0 z-20">
+            <div class="flex justify-between items-center px-5 py-2">
+                <span>
+                    <p class="text-white font-bold text-2xl">Technologies</p>
+                </span>
                 <button @click="selectCareer=0" class="text-white rounded-full px-3 text-2xl mx-3 mt-2 cursor-pointer">x</button>
             </div>
-            <component :is="viewsStats[selectCareer]" />
+            <div class="h-full"> 
+                <component :is="viewsStats[selectCareer]" />
+            </div>
         </div>
         </transition>
     </section>
@@ -110,5 +115,6 @@
 .pop-leave-active {
   transition: all 0.3s ease;
 }
+
 
 </style>
