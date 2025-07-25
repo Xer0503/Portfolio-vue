@@ -64,7 +64,7 @@ const icon = [
               <span>
                 <img :src="toggles[skill.id].value ? icon[1].src : icon[0].src"
                      :alt="toggles[skill.id].value ? icon[1].alt : icon[0].alt"
-                     class="w-5" />
+                     class="w-4" />
               </span>
             </transition>
           </div>

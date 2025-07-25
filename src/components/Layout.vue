@@ -39,15 +39,16 @@ function closeNav() {
   <div class="relative overflow-hidden">
 
     <!-- Top Nav (Mobile Only) -->
-    <div class="block md:hidden z-40 bg-gray-900 max-h-50">
+    <div class="w-screen fixed md:hidden z-40 bg-gray-900 max-h-50">
       <Nav />
     </div>
 
     <!-- Mobile Sidebar Slide-In -->
     <transition name="slide">
       <div
+        v-on:click="closeNav"
         v-if="navToggle"
-        class="fixed top-0 left-0 z-50 w-10/12 h-screen bg-gray-900 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out"
+        class="fixed top-0 left-0 z-50 w-10/12 opacity-70 bg-gray-900 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out"
       >
         <SidebarMobile />
       </div>
@@ -61,7 +62,7 @@ function closeNav() {
     ></div>
 
     <!-- Main Layout -->
-    <section @click="closeNav" class="w-screen px-2 py-2 overflow-auto">
+    <section @click="closeNav" class="px-2 py-2 overflow-auto mt-15 md:mt-0">
       <div class="grid grid-cols-12 gap-3">
 
         <!-- Sidebar (Desktop Only) -->
@@ -70,7 +71,7 @@ function closeNav() {
         </div>
 
         <!-- Main Content Area -->
-        <div class="col-span-12 md:col-span-9 px-2 h-screen overflow-y-auto scroll-smooth">
+        <div class="col-span-12 md:col-span-9 px-2 overflow-y-auto scroll-smooth">
           <component :is="views[selectedView]" />
         </div>
 
@@ -92,7 +93,7 @@ html {
 }
 .slide-enter-to {
   transform: translateX(0%);
-  opacity: 1;
+  opacity: 0.7;
 }
 .slide-enter-active,
 .slide-leave-active {
@@ -100,7 +101,7 @@ html {
 }
 .slide-leave-from {
   transform: translateX(0%);
-  opacity: 1;
+  opacity: 0.7;
 }
 .slide-leave-to {
   transform: translateX(-100%);
