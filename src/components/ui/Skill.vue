@@ -25,7 +25,7 @@ const logos = [
         :key="index"
         class="mx-4 flex items-center"
       >
-        <img :src="logo" class="h-16 w-13 md:w-10 object-contain hover:scale-110 active:scale-150 md:active:scale-100 transition-transform duration-300" />
+        <img :src="logo" class="h-16 w-13 md:w-10 object-contain hover:scale-110 md:hover:scale-130 active:scale-150 md:active:scale-100 transition-transform duration-300" />
       </div>
     </div>
     <div class="scroll-track-r flex w-max animate-scroll group-hover:paused">
@@ -34,7 +34,7 @@ const logos = [
         :key="index"
         class="mx-4 flex items-center"
       >
-        <img :src="icon" class="h-16 w-13 md:w-10 object-contain hover:scale-110 active:scale-150 md:active:scale-100 transition-transform duration-300 " />
+        <img :src="icon" class="h-16 w-13 md:w-10 object-contain hover:scale-110 active:scale-150 md:hover:scale-130 md:active:scale-100 transition-transform duration-300 " />
       </div>
     </div>
   </div>

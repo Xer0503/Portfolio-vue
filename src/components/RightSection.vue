@@ -17,7 +17,7 @@
         </div>
 
         <!--Contacts-->
-        <div class="h-3/12 rounded-2xl bg-gray-800">
+        <div class="rounded-2xl bg-gray-800">
             <Contact />
         </div>
     </div>

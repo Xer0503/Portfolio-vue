@@ -59,7 +59,7 @@ const heading = careerStat.reduce((map, item) => {
         <!--End of Card body-->
 
         <!---->
-        <div @click="selectCareer = 0" v-if="selectCareer > 0" class="fixed inset-0 z-40 bg-black opacity-70 h-screen"></div>
+        <div v-if="selectCareer > 0" class="fixed inset-0 z-40 bg-black opacity-70 h-screen"></div>
         <div
         v-if="selectCareer > 0"
         @click="selectCareer = 0"
@@ -67,10 +67,13 @@ const heading = careerStat.reduce((map, item) => {
         ></div>
 
         <transition name="pop">
-        <div @click="selectCareer = 0" v-if="selectCareer > 0" class="flex flex-col rounded-2xl absolute inset-0 z-50">
-            <div class="flex items-center px-5 py-2">
+        <div v-if="selectCareer > 0" class="flex flex-col rounded-2xl absolute inset-0 z-50">
+            <div class="flex justify-between items-center px-5 py-2">
                 <span>
                     <p class="text-white font-bold text-2xl">{{ heading[selectCareer] }}</p>
+                </span>
+                <span @click="selectCareer = 0">
+                    <img src='/icons/back.svg' alt="back" class="w-7 hover:scale-125 transition-transform duration-300 cursor-pointer" />
                 </span>
             </div>
             <div class=""> 

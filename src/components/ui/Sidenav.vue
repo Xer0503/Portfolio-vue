@@ -78,10 +78,10 @@ function handleNavClick(id) {
             class="flex space-x-2 space- items-center px-2 py-[5px] md:py-1  rounded-lg cursor-pointer"
             :class="{ 'bg-gray-600': selectedView === item.id }"
           >
-          <div class="flex space-x-2 justify-center py-2 items-center">
-            <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5 md:w-4 my-auto" />
-            <p class="text-md md:text-sm">{{ item.label }}</p>
-          </div>
+            <div class="flex space-x-2 justify-center py-2 items-center">
+              <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5 md:w-4 my-auto" />
+              <p class="text-md md:text-sm">{{ item.label }}</p>
+            </div>
           </li>
         </a>
       </ul>

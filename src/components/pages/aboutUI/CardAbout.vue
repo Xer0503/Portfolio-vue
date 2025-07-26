@@ -21,8 +21,8 @@
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-100"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-40"></div>
-        <div class="absolute z-25 bottom-0 right-0 left-25 md:bottom-0 md:right-0 md:left-80">
-            <img :src="Profile" alt="Profile" class="h-10/12 md:h-3/12" />
+        <div class="absolute md:h-[90%] md:w-[100%] z-25 bottom-0 right-0 left-25 md:bottom-0 md:right-0 md:left-50">
+            <img :src="Profile" alt="Profile" class="h-full" />
         </div>
         <div class="absolute z-28 inset-0 bg-gradient-to-t from-black to-transparent opacity-40"></div>
     </div>

@@ -24,7 +24,9 @@ const logos = [
         :key="index"
         class="w-15 h-15 flex items-center justify-center bg-gray-600 hover:dark:bg-gray-100 rounded-2xl shadow-md hover:scale-110 active:scale-120 transition-transform duration-300"
       >
-        <img :src="logo.src" :alt="logo.alt" class="w-12 h-12 object-contain hover:scale-110 active:scale-120 transition-transform duration-300" />
+        <div class="relative">
+          <img :src="logo.src" :alt="logo.alt" class="w-12 h-12 object-contain hover:scale-110 active:scale-120 transition-transform duration-300" />
+        </div>
       </div>
     </div>
   </section>
