@@ -56,7 +56,7 @@ function handleNavClick(id) {
   <div class="flex flex-col h-screen">
     <section class="flex flex-col px-2 pt-2 text-white">
       <div>
-        <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 md:w-20 mx-auto mb-4 rounded-full shadow-lg" />
+        <img :src="P" alt="Profile Picture" loading="lazy" class="w-9/12 md:w-30 mx-auto mb-4 rounded-full shadow-lg" />
       </div>
       <div class="text-center font-bold">
         <p class="text-2xl md:text-md font-bold">Rexie Villanueva</p>
@@ -69,25 +69,27 @@ function handleNavClick(id) {
       </div>
     </section>
     <div class="px-5 text-white">
-      <ul class="space-y-3 md:space-y-1">
+      <ul class="md:space-y-5">
         <a href="#top">
           <li
             v-for="item in navItems"
             :key="item.id"
             @click="handleNavClick(item.id)"
-            class="flex space-x-2 items-center p-2 rounded-lg cursor-pointer"
+            class="flex space-x-2 space- items-center px-2 py-[5px] md:py-1  rounded-lg cursor-pointer"
             :class="{ 'bg-gray-600': selectedView === item.id }"
           >
-            <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5 md:w-4" />
-            <p class="text-sm">{{ item.label }}</p>
+          <div class="flex space-x-2 justify-center py-2 items-center">
+            <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5 md:w-4 my-auto" />
+            <p class="text-md md:text-sm">{{ item.label }}</p>
+          </div>
           </li>
         </a>
       </ul>
     </div>
 
-    <div class="flex flex-col px-5 w-full md:h-full justify-end mt-10">
+    <div class="flex flex-col px-5 w-full md:h-screen justify-end mt-5">
       <!-- Dark Mode Toggle -->
-      <div class="flex justify-between text-white bg-gray-600 px-3 py-2 rounded-[10px]">
+      <div class="flex justify-between text-white bg-gray-600 px-3 py-2 md:py-[3px] rounded-[10px]">
         <span class="flex items-center">
           <span>🌓</span>
           <p>Dark Mode</p>

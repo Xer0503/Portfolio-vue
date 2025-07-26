@@ -17,10 +17,23 @@ const logos = [
 </script>
 
 <template>
-  <div class="overflow-hidden whitespace-nowrap relative py-4" id="career">
-    <div class="scroll-track">
-      <div v-for="(logo, index) in logos.concat(logos)" :key="index" class="mx-4 flex items-center">
-        <img :src="logo" class="h-16 w-auto object-contain" />
+  <div class="overflow-hidden whitespace-nowrap relative py-4 group" id="career">
+    <div class="scroll-track flex w-max animate-scroll group-hover:paused space-y-2">
+      <div
+        v-for="(logo, index) in logos.concat(logos)"
+        :key="index"
+        class="mx-4 flex items-center"
+      >
+        <img :src="logo" class="h-16 w-13 md:w-auto object-contain" />
+      </div>
+    </div>
+    <div class="scroll-track-r flex w-max animate-scroll group-hover:paused">
+      <div
+        v-for="(icon, index) in logos.concat(logos)"
+        :key="index"
+        class="mx-4 flex items-center"
+      >
+        <img :src="icon" class="h-16 w-13 md:w-auto object-contain" />
       </div>
     </div>
   </div>
@@ -36,9 +49,38 @@ const logos = [
   }
 }
 
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 15s linear infinite;
+}
+
+.scroll-track-r {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 15s linear infinite;
+}
+
+.scroll-track:hover {
+  animation-play-state: paused;
+}
+.scroll-track:active {
+  animation-play-state: paused; /* pause on hover */
+}
+
+.scroll-track-r:hover {
+  animation-play-state: paused;
+}
+.scroll-track-r:active {
+  animation-play-state: paused; /* pause on hover */
 }
 </style>
