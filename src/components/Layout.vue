@@ -47,7 +47,7 @@ function closeNav() {
       <div
         v-on:click="closeNav"
         v-if="navToggle"
-        class="fixed top-0 left-0 z-50 w-10/12 opacity-70 bg-gray-900 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out"
+        class="fixed top-0 left-0 z-50 w-10/12 bg-gray-900 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out"
       >
         <SidebarMobile />
       </div>
@@ -103,7 +103,7 @@ body{
 }
 .slide-enter-to {
   transform: translateX(0%);
-  opacity: 0.7;
+  opacity: 1;
 }
 .slide-enter-active,
 .slide-leave-active {
@@ -111,7 +111,7 @@ body{
 }
 .slide-leave-from {
   transform: translateX(0%);
-  opacity: 0.7;
+  opacity: 1;
 }
 .slide-leave-to {
   transform: translateX(-100%);

@@ -49,9 +49,9 @@ const heading = careerStat.reduce((map, item) => {
                     <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
                         <span class="flex space-x-3">
                             <img :src="career.icon" :alt="career.heading" class="w-15 md:w-10 hover:scale-150 transition-transform duration-300" />
-                            <h2 class="text-lg font-bold hover:scale-150 transition-transform duration-300">{{ career.num }}</h2>
+                            <h2 class="text-lg font-bold hover:scale-120 transition-transform duration-300">{{ career.num }}</h2>
                         </span>
-                        <p class="text-md md:text-sm hover:scale-150 transition-transform duration-300">{{ career.heading }}</p> 
+                        <p class="text-md md:text-sm hover:scale-120 transition-transform duration-300">{{ career.heading }}</p> 
                     </div>
                 </a>
             </div>
@@ -60,14 +60,20 @@ const heading = careerStat.reduce((map, item) => {
 
         <!---->
         <div @click="selectCareer = 0" v-if="selectCareer > 0" class="fixed inset-0 z-40 bg-black opacity-70 h-screen"></div>
+        <div
+        v-if="selectCareer > 0"
+        @click="selectCareer = 0"
+        class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+        ></div>
+
         <transition name="pop">
-        <div @click="selectCareer = 0" v-if="selectCareer > 0" class="w-full h-full flex flex-col bg-gray-950 rounded-2xl absolute inset-0 z-50">
+        <div @click="selectCareer = 0" v-if="selectCareer > 0" class="flex flex-col rounded-2xl absolute inset-0 z-50">
             <div class="flex items-center px-5 py-2">
                 <span>
                     <p class="text-white font-bold text-2xl">{{ heading[selectCareer] }}</p>
                 </span>
             </div>
-            <div class="h-full"> 
+            <div class=""> 
                 <component :is="viewsStats[selectCareer]" />
             </div>
         </div>

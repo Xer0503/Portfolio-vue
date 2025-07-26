@@ -20,7 +20,7 @@
         </div>
 
         <!--Career Stat-->
-        <div class="rounded-2xl bg-gray-900 h-max-[30vh]">
+        <div class="rounded-2xl bg-gray-900">
             <Career />
         </div>
 

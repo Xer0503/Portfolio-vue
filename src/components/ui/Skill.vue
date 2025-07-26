@@ -18,6 +18,7 @@ const logos = [
 
 <template>
   <div class="overflow-hidden whitespace-nowrap relative py-2 group" id="career">
+    
     <div class="scroll-track flex w-max animate-scroll group-hover:paused">
       <div
         v-for="(logo, index) in logos.concat(logos)"
