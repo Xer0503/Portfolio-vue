@@ -47,18 +47,18 @@ const icon = [
 
 <template>
   <section class="text-white relative overflow-hidden">
-    <div class="flex space-x-2 px-3 py-2">
+    <div class="flex space-x-2 px-3">
       <span>Logo</span>
       <p class="font-bold text-2xl">Expertise</p>
     </div>
 
-    <div class="flex flex-col px-5 py-3">
+    <div class="flex flex-col px-[5px]">
       <div v-for="skill in skills" :key="skill.id">
         <a href="#title">
         <div @click="toggles[skill.id].value = !toggles[skill.id].value" class="flex justify-between p-3 cursor-pointer" id="title">
           <div class="flex space-x-2">
             <span>{{ skill.emoji }}</span>
-            <p class="md:text-lg font-bold">{{ skill.title }}</p>
+            <p class="md:text-sm font-bold">{{ skill.title }}</p>
           </div>
           <transition name="dropUp">
               <span>

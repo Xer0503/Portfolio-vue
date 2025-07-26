@@ -61,16 +61,24 @@ function closeNav() {
     ></div>
 
     <!-- Desktop View -->
-    <section class="grid grid-cols-12 gap-x-2 md:h-screen">
+    <section class="grid grid-cols-12 md:gap-x-2 md:h-screen">
       <!-- Sidebar -->
       <div class="hidden md:flex md:col-span-3 bg-gray-900">
         <div class="sticky top-0 w-full">
           <Sidenav />
         </div>
       </div>
+
       <!-- Main Content Area (Scrollable) -->
-      <div @click="closeNav" class="col-span-12 py-2 md:col-span-9 px-2 md:overflow-y-auto md:h-screen scroll-smooth">
-        <component :is="views[selectedView]" />
+      <div class="col-span-12 md:col-span-9 md:overflow-y-auto md:h-screen scroll-smooth">
+        <div class="grid grid-cols-5">
+          <div @click="closeNav" class="col-span-5 py-2 lg:col-span-3 px-2">
+            <component :is="views[selectedView]" />
+          </div>
+          <div class="col-span-2 hidden lg:block">
+            <RightSection />
+          </div>
+        </div>
       </div>
     </section>
 

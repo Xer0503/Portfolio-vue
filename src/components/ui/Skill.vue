@@ -17,14 +17,14 @@ const logos = [
 </script>
 
 <template>
-  <div class="overflow-hidden whitespace-nowrap relative py-4 group" id="career">
-    <div class="scroll-track flex w-max animate-scroll group-hover:paused space-y-2">
+  <div class="overflow-hidden whitespace-nowrap relative py-2 group" id="career">
+    <div class="scroll-track flex w-max animate-scroll group-hover:paused">
       <div
         v-for="(logo, index) in logos.concat(logos)"
         :key="index"
         class="mx-4 flex items-center"
       >
-        <img :src="logo" class="h-16 w-13 md:w-auto object-contain" />
+        <img :src="logo" class="h-16 w-13 md:w-10 object-contain hover:scale-110 active:scale-150 md:active:scale-100 transition-transform duration-300" />
       </div>
     </div>
     <div class="scroll-track-r flex w-max animate-scroll group-hover:paused">
@@ -33,7 +33,7 @@ const logos = [
         :key="index"
         class="mx-4 flex items-center"
       >
-        <img :src="icon" class="h-16 w-13 md:w-auto object-contain" />
+        <img :src="icon" class="h-16 w-13 md:w-10 object-contain hover:scale-110 active:scale-150 md:active:scale-100 transition-transform duration-300 " />
       </div>
     </div>
   </div>
@@ -61,13 +61,13 @@ const logos = [
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 15s linear infinite;
+  animation: scroll-left 20s linear infinite;
 }
 
 .scroll-track-r {
   display: flex;
   width: max-content;
-  animation: scroll-right 15s linear infinite;
+  animation: scroll-right 20s linear infinite;
 }
 
 .scroll-track:hover {

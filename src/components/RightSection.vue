@@ -1,5 +1,6 @@
 <script setup>
     import Skill from './ui/Skill.vue';
+    import Contact from './pages/aboutUI/Contact.vue';
 </script>
 
 <template>
@@ -17,7 +18,7 @@
 
         <!--Contacts-->
         <div class="h-3/12 rounded-2xl bg-gray-800">
-        
+            <Contact />
         </div>
     </div>
     <!--End of Right Sidebar-->

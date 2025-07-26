@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative h-[40vh] rounded-2xl overflow-hidden text-white" id="top">
+  <div class="relative h-[20vh] rounded-2xl overflow-hidden text-white" id="top">
 
     <!-- Background image -->
     <div class="absolute inset-0 z-10 bg-center bg-cover bg-no-repeat bg-[url('/bg.jpg')]"></div>
@@ -34,7 +34,7 @@ onMounted(() => {
 
     <!-- Typing text centered -->
     <div class="absolute z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center px-4">
-      <p class="text-3xl md:text-5xl font-bold font-serif drop-shadow-xl">
+      <p class="text-3xl md:text-2xl font-bold font-serif drop-shadow-xl">
         {{ displayedText }}<span class="text-white animate-pulse">|</span>
       </p>
     </div>

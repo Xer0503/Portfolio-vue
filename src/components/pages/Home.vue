@@ -8,19 +8,19 @@
 
 <template>
     <!--Middle Section-->
-    <div class="rounded-2xl col-span-12 md:col-span-4 space-y-2">
+    <div class="rounded-2xl space-y-2">
 
         
         <!--Welcome Card-->
         <div class="h-5/12 rounded-2xl bg-gray-900">
             <Welcome />
         </div>
-        <div class="h-5/12 rounded-2xl bg-gray-900">
+        <div class="h-5/12 rounded-2xl bg-gray-900 md:hidden">
             <Skill />
         </div>
+
         <!--Career Stat-->
-        
-        <div class="rounded-2xl bg-gray-900">
+        <div class="rounded-2xl bg-gray-900 h-max-[30vh]">
             <Career />
         </div>
 
@@ -31,7 +31,7 @@
         </div>
 
         <!--Contacts-->
-        <div class="rounded-2xl bg-gray-900">
+        <div class="rounded-2xl bg-gray-900 lg:hidden">
             <Contact />
         </div>
     </div>

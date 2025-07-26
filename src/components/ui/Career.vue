@@ -1,85 +1,57 @@
 <script setup>
-    import Exp from '../../assets/icons/time.svg'
-    import Certificates from '../../assets/icons/certificate.svg'
-    import Projects from '../../assets/icons/projects.svg'
-    import Technologies from '../../assets/icons/tech.svg'
+import { ref } from 'vue'
 
-    import { selectCareer } from '../../utils'
+import Exp from '../../assets/icons/time.svg'
+import Certificates from '../../assets/icons/certificate.svg'
+import Projects from '../../assets/icons/projects.svg'
+import Technologies from '../../assets/icons/tech.svg'
 
-    import ExpExpand from './ExpertUI/ExpExpand.vue'
-    import CertificateExapnd from './ExpertUI/Certificates.vue'
-    import ProjectExpand from './ExpertUI/ProjectExpand.vue'
-    import TechnologiesExpand from './ExpertUI/TechnologiesExpand.vue'
+import ExpExpand from './ExpertUI/ExpExpand.vue'
+import CertificateExapnd from './ExpertUI/Certificates.vue'
+import ProjectExpand from './ExpertUI/ProjectExpand.vue'
+import TechnologiesExpand from './ExpertUI/TechnologiesExpand.vue'
 
-    const viewsStats = {
-        1 : ExpExpand,
-        2 : CertificateExapnd,
-        3 : ProjectExpand,
-        4 : TechnologiesExpand
-    }
-    const heading = {
-        1 : 'Experience',
-        2 : 'Certificates',
-        3 : 'Projects',
-        4 : 'Technologies'
-    }
+const selectCareer = ref(0)
 
+const careerStat = [
+  { id: 1, view: ExpExpand, heading: 'Experience', icon: Exp, num: 0 },
+  { id: 2, view: CertificateExapnd, heading: 'Certificates', icon: Certificates, num: 15 },
+  { id: 3, view: ProjectExpand, heading: 'Projects', icon: Projects, num: 20 },
+  { id: 4, view: TechnologiesExpand, heading: 'Technologies', icon: Technologies, num: 13 },
+]
+
+const viewsStats = careerStat.reduce((map, item) => {
+  map[item.id] = item.view
+  return map
+}, {})
+
+const heading = careerStat.reduce((map, item) => {
+  map[item.id] = item.heading
+  return map
+}, {})
 </script>
 
 <template>
     <!--Card-->
     <section class="px-2 py-3 relative">
         <!--Card Head-->
-        <div class="my-3 px-3">
+        <div class="my-3 md:my-1 px-3">
             <h2 class="text-white font-black text-2xl">Career Stats</h2>
         </div>
 
         <!--Card Body-->
-        <div>
-            <div class="grid grid-cols-2 gap-2 md:gap-4 text-white md:px-5 md:py-2">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-white">
+            <div v-for="career in careerStat" 
+            :key="career.id"
+            @click="selectCareer = career.id" 
+            class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer hover:bg-gray-500 hover:scale-110 hover:outline-2 transition-transform duration-300">
                 <a href="#career">
-                    <div @click="selectCareer = 1" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                            <span class="flex space-x-3">
-                                <img :src="Exp" alt="icons" class="w-15" />
-                                <h2 class="text-3xl font-bold">0</h2>
-                            </span>
-                            <p class="text-md md:text-2xl">Experience</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#career">
-                    <div @click="selectCareer = 2" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                            <span class="flex space-x-3">
-                                <img :src="Certificates" alt="icons" class="w-15" />
-                                <h2 class="text-3xl font-bold">5</h2>
-                            </span>
-                            <p class="text-md md:text-2xl">Certificates</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="#career">
-                    <div @click="selectCareer = 3" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                            <span class="flex space-x-3">
-                                <img :src="Projects" alt="icons" class="w-15" />
-                                <h2 class="text-3xl font-bold">20</h2>
-                            </span>
-                            <p class="text-md md:text-2xl">Projects</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="#career">
-                    <div @click="selectCareer = 4" class="rounded-2xl bg-gray-800 px-2 py-4 cursor-pointer">
-                        <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
-                            <span class="flex space-x-3">
-                                <img :src="Technologies" alt="icons" class="w-15" />
-                                <h2 class="text-3xl font-bold">13</h2>
-                            </span>
-                            <p class="text-md md:text-2xl">Technologies</p>
-                        </div>
+                    <div class="flex flex-col space-y-2 px-3 justify-center items-center font-bold">
+                        <span class="flex space-x-3">
+                            <img :src="career.icon" :alt="career.heading" class="w-15 md:w-10 hover:scale-150 transition-transform duration-300" />
+                            <h2 class="text-lg font-bold hover:scale-150 transition-transform duration-300">{{ career.num }}</h2>
+                        </span>
+                        <p class="text-md md:text-sm hover:scale-150 transition-transform duration-300">{{ career.heading }}</p> 
                     </div>
                 </a>
             </div>
@@ -127,6 +99,4 @@
 .pop-leave-active {
   transition: all 0.3s ease;
 }
-
-
 </style>
