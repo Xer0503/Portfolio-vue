@@ -71,13 +71,28 @@ function closeNav() {
 
       <!-- Main Content Area (Scrollable) -->
       <div class="col-span-12 md:col-span-9 md:overflow-y-auto md:h-screen scroll-smooth py-2">
-        <div class="grid grid-cols-5">
-          <div @click="closeNav" class="col-span-5 lg:col-span-3 px-2">
+        <div class="grid grid-cols-12">
+          <!-- Main Content Area (left side) -->
+          <div
+            @click="closeNav"
+            :class="[
+              'px-2 col-span-12',
+              selectedView == 2 ? 'lg:col-span-6' : 'lg:col-span-8'
+            ]"
+          >
             <component :is="views[selectedView]" />
           </div>
-          <div class="col-span-2 hidden lg:block">
+
+          <!-- Right Section -->
+          <div
+            class="hidden lg:block"
+            :class="[
+              selectedView == 2 ? 'col-span-6' : 'col-span-4'
+            ]"
+          >
             <RightSection />
           </div>
+
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@
     import Expert from '../ui/Expert.vue'
     import Skill from '../ui/Skill.vue';
     import Contact from './aboutUI/Contact.vue';
+    import Feauture from '../ui/Feauture.vue'
 </script>
 
 <template>
@@ -24,9 +25,17 @@
             <Career />
         </div>
 
-        
-        <!--Expertise-->
         <div class="rounded-2xl bg-gray-900">
+            <Feauture />
+        </div>
+
+        <!--Expertise-->
+        <div class="rounded-2xl bg-gray-900 md:hidden">
+            <Expert />
+        </div>
+
+        <!--Expertise-->
+        <div class="rounded-2xl bg-gray-900 md:hidden">
             <Expert />
         </div>
 

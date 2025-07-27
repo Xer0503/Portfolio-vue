@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
+
 const skills = [
   {
     id: 1,
@@ -95,16 +96,7 @@ const icon = [
   opacity: 1;
   transform: scale(1);
 }
-.description-leave-from {
-  opacity: 1;
-  transform: scale(1);
-}
-.description-leave-to {
-  opacity: 0;
-  transform: scale(0.95);
-}
-.description-enter-active,
-.description-leave-active {
+.description-enter-active{
   transition: all 0.3s ease;
 }
 
@@ -112,25 +104,14 @@ const icon = [
   padding: 5px 20px;
 }
 
-
 .dropUp-enter-from {
   opacity: 0;
 }
 .dropUp-enter-to {
   opacity: 1;
 }
-.dropUp-leave-from {
-  opacity: 1;
-}
-.dropUp-leave-to {
-  opacity: 0;
-}
 
-.dropUp-enter-active,
-.dropUp-leave-active {
+.dropUp-enter-active{
   transition: all 0.5s ease;
 }
-
-
-
 </style>

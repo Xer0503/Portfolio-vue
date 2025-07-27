@@ -3,12 +3,14 @@
     import Contact from './aboutUI/Contact.vue';
     import AboutInfo from './aboutUI/AboutInfo.vue';
     import Skill from '../ui/Skill.vue';
+    import { selectedView } from '../../utils';
+    import Education from './aboutUI/Education.vue';
 </script>
 
 <template>
     <section>
         <!--Middle Section-->
-        <div class="rounded-2xl col-span-12 md:col-span-4">
+        <div class="rounded-2xl">
             
             <!--About Card-->
             <div class="">
@@ -19,6 +21,11 @@
             <div class="rounded-2xl bg-gray-900 mt-2">
                 <AboutInfo />
             </div>
+
+            <!--Education-->
+            <div class="rounded-2xl bg-gray-900 mt-2">
+                <Education />
+            </div>
             
             <!--Skill
             <div class="rounded-2xl bg-gray-900 mt-2 md:hidden">
@@ -26,7 +33,7 @@
             </div>
             -->
             <!--Contact Info-->
-            <div class="rounded-2xl bg-gray-900 mt-2">
+            <div v-if="selectedView != 2" class="rounded-2xl bg-gray-900 mt-2">
                 <Contact />
             </div>
         </div>
