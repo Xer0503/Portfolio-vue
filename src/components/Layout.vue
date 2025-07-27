@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, watch } from 'vue'
+import { watch } from 'vue'
 import { navToggle, selectedView } from '../utils'
 
 // Page Components
@@ -45,8 +45,8 @@ function closeNav() {
     <!-- Mobile Sidebar Slide-In -->
     <transition name="slide">
       <div
-        v-on:click="closeNav"
-        v-if="navToggle"
+        v-show="navToggle"
+        @click="closeNav"
         class="fixed top-0 left-0 z-50 w-10/12 bg-gray-900 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out"
       >
         <SidebarMobile />
@@ -55,7 +55,7 @@ function closeNav() {
 
     <!-- Mobile Overlay Blur -->
     <div
-      v-if="navToggle"
+      v-show="navToggle"
       @click="closeNav"
       class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
     ></div>
@@ -81,22 +81,20 @@ function closeNav() {
         </div>
       </div>
     </section>
-
-
   </div>
 </template>
 
 <style>
-
+/* Global reset */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* fallback for Safari */
 }
 
-body{
+body {
   margin: 0;
 }
 
-/* Sidebar slide transition */
+/* Slide transition */
 .slide-enter-from {
   transform: translateX(-100%);
   opacity: 0;
@@ -116,5 +114,11 @@ body{
 .slide-leave-to {
   transform: translateX(-100%);
   opacity: 0;
+}
+
+/* Safari Fix for backdrop blur */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 </style>
