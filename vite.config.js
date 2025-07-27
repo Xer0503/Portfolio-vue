@@ -6,14 +6,10 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     vue()],
-    
-  server: {
-    host: true
-  }
-})
-
-export default defineConfig({
   build: {
     target: 'safari12',
   },
+  server: {
+    host: true
+  }
 })
