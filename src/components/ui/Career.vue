@@ -73,7 +73,7 @@ const heading = careerStat.reduce((map, item) => {
                     <p class="text-white font-bold text-2xl">{{ heading[selectCareer] }}</p>
                 </span>
                 <span @click="selectCareer = 0">
-                    <img src='/icons/back.svg' alt="back" class="w-7 hover:scale-125 transition-transform duration-300 cursor-pointer" />
+                    <img src='/icons/back.svg' alt="back" class="w-7 hover:scale-125 hover:bg-blue-500 active:bg-blue-700 rounded-full transition-transform duration-300 cursor-pointer" />
                 </span>
             </div>
             <div class=""> 
