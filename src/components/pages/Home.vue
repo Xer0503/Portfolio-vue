@@ -34,11 +34,6 @@
             <Expert />
         </div>
 
-        <!--Expertise-->
-        <div class="rounded-2xl bg-gray-900 md:hidden">
-            <Expert />
-        </div>
-
         <!--Contacts-->
         <div class="rounded-2xl bg-gray-900 lg:hidden">
             <Contact />
