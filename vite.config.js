@@ -11,3 +11,9 @@ export default defineConfig({
     host: true
   }
 })
+
+export default defineConfig({
+  build: {
+    target: 'safari12',
+  },
+})
