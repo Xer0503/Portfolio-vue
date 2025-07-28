@@ -46,8 +46,7 @@ function closeNav() {
     <transition name="slide">
       <div
         v-show="navToggle"
-        @click="closeNav"
-        class="fixed top-0 left-0 z-50 w-10/12 bg-gray-900 shadow-lg rounded-r-3xl md:hidden transition-transform duration-300 ease-in-out"
+        class="fixed top-0 left-0 z-50 w-10/12 bg-gray-900 rounded-r-3xl md:hidden h-screen"
       >
         <SidebarMobile />
       </div>
@@ -59,6 +58,7 @@ function closeNav() {
       @click="closeNav"
       class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
     ></div>
+
 
     <!-- Desktop View -->
     <section class="grid grid-cols-12 md:gap-x-2 md:h-screen">
