@@ -61,13 +61,13 @@ function handleNavClick(id) {
     </section>
 
     <!-- Navigation (scrollable) -->
-    <nav class="flex flex-col justify-center h-[35%] w-full md:h-full px-4">
+    <nav class="flex flex-col justify-center h-[35%] md:h-full w-full px-4 my-auto">
       <ul class="space-y-3">
         <li
           v-for="item in navItems"
           :key="item.id"
           @click="handleNavClick(item.id)"
-          class="flex w-[100%] px-3 space-x-2 py-2 rounded-2xl cursor-pointer hover:bg-gray-600 hover:scale-105 transition-transform duration-300"
+          class="flex w-[100%] px-3 space-x-2 md:w-[90%] mx-auto py-2 rounded-2xl cursor-pointer hover:bg-gray-600 hover:scale-105 transition-transform duration-300"
           :class="{ 'bg-gray-600 scale-105': selectedView === item.id }"
         >
           <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5 h-5 transition-transform duration-300" />
@@ -79,7 +79,7 @@ function handleNavClick(id) {
     </nav>
 
     <!-- Footer (sticky bottom) -->
-    <div class="px-4 py-3 shrink-0 space-y-2 h-[35%] flex flex-col items-center justify-center">
+    <div class="px-4 py-3 shrink-0 space-y-2 h-[35%] md:h-[15%] flex flex-col items-center justify-center">
       <div class="flex justify-between items-center w-[90%] bg-gray-600 px-3 py-2 rounded-xl text-sm">
         <span class="flex items-center space-x-1">
           <span>🌓</span>
