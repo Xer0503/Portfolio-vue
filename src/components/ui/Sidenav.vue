@@ -79,7 +79,7 @@ function handleNavClick(id) {
     </nav>
 
     <!-- Footer (sticky bottom) -->
-    <div class="px-4 py-3 shrink-0">
+    <div class="px-4 py-3 shrink-0 space-y-2">
       <div class="flex justify-between items-center bg-gray-600 px-3 py-2 rounded-xl text-sm">
         <span class="flex items-center space-x-1">
           <span>🌓</span>
@@ -89,7 +89,7 @@ function handleNavClick(id) {
           on
         </button>
       </div>
-      <footer class="text-center text-xs text-gray-400 mt-2">
+      <footer class="text-center text-xs text-gray-400">
         <p>Design & Built by Rexie Villanueva</p>
         <p>2025, All rights reserved.</p>
       </footer>
