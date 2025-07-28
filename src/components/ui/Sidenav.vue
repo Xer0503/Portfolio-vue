@@ -47,21 +47,24 @@ function handleNavClick(id) {
 </script>
 
 <template>
-  <div class="flex flex-col h-screen bg-white dark:bg-gray-900 text-black dark:text-white rounded-r-3xl">
+
+  <div class="flex flex-col h-[100vh] text-white rounded-r-3xl">
     <!-- Profile -->
-    <section class="px-4 pt-6 shrink-0 text-center">
-      <img :src="P" alt="Profile" class="w-35 h-35 mx-auto mb-3 rounded-full shadow-md object-cover" />
-      <p class="text-xl font-bold">Rexie Villanueva</p>
-      <p class="text-sm text-gray-300">FullStack Developer</p>
+    <section class="text-center flex flex-col justify-center space-y-2 h-[35%] md:h-[40%]">
+      <div class="flex flex-col">
+        <img :src="P" alt="Profile" class="w-45 h-45 md:w-34 md:h-34 mx-auto mb-3 rounded-full shadow-md object-cover" />
+        <p class="text-xl font-bold">Rexie Villanueva</p>
+        <p class="text-sm text-gray-300">Fullstack Developer</p>
+      </div>
       <a
-        class="block mt-4 w-[50%] py-2 mx-auto bg-gray-600 hover:bg-gray-700 active:bg-blue-500 rounded-2xl text-white text-sm"
+        class="mt-4 px-3 py-2 w-[50%] mx-auto bg-gray-600 hover:bg-gray-700 active:bg-blue-500 rounded-2xl text-white text-sm"
       >
         View Resume
       </a>
     </section>
 
     <!-- Navigation (scrollable) -->
-    <nav class="flex flex-col justify-center h-[35%] md:h-full w-full px-4 my-auto">
+    <nav class="flex flex-col justify-center h-[40%] w-full px-4">
       <ul class="space-y-3">
         <li
           v-for="item in navItems"
@@ -79,9 +82,9 @@ function handleNavClick(id) {
     </nav>
 
     <!-- Footer (sticky bottom) -->
-    <div class="px-4 py-3 shrink-0 space-y-2 h-[35%] md:h-[15%] flex flex-col items-center justify-center">
+    <div class="space-y-2 h-[20%] my-auto flex flex-col md:justify-center items-center">
       <div class="flex justify-between items-center w-[90%] bg-gray-600 px-3 py-2 rounded-xl text-sm">
-        <span class="flex items-center space-x-1">
+        <span class="flex space-x-1">
           <span>🌓</span>
           <span>Dark Mode</span>
         </span>
