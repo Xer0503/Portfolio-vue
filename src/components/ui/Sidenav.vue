@@ -62,18 +62,18 @@ function handleNavClick(id) {
     </section>
 
     <!-- Navigation (scrollable) -->
-    <nav class="flex-1 mt-4 px-4">
+    <nav class="flex flex-col justify-center h-[50%] w-full md:h-full px-4">
       <ul class="space-y-3">
         <li
           v-for="item in navItems"
           :key="item.id"
           @click="handleNavClick(item.id)"
-          class="flex items-center space-x-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-600 hover:scale-105 transition-transform duration-300"
+          class="flex w-[100%] px-3 space-x-2 py-2 rounded-2xl cursor-pointer hover:bg-gray-600 hover:scale-105 transition-transform duration-300"
           :class="{ 'bg-gray-600 scale-105': selectedView === item.id }"
         >
           <img :src="selectedView === item.id ? item.iconBlue : item.icon" class="w-5 h-5 transition-transform duration-300" />
           <span class="text-sm"
-          :class="{'text-blue-600 font-semibold transition-colors duration-200':selectedView === item.id}"
+          :class="{'text-blue-500 font-semibold transition-colors duration-200':selectedView === item.id}"
           >{{ item.label }}</span>
         </li>
       </ul>
