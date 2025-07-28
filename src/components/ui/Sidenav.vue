@@ -61,7 +61,7 @@ function handleNavClick(id) {
     </section>
 
     <!-- Navigation (scrollable) -->
-    <nav class="flex flex-col justify-center h-[50%] w-full md:h-full px-4">
+    <nav class="flex flex-col justify-center h-[35%] w-full md:h-full px-4">
       <ul class="space-y-3">
         <li
           v-for="item in navItems"
@@ -79,8 +79,8 @@ function handleNavClick(id) {
     </nav>
 
     <!-- Footer (sticky bottom) -->
-    <div class="px-4 py-3 shrink-0 space-y-2">
-      <div class="flex justify-between items-center bg-gray-600 px-3 py-2 rounded-xl text-sm">
+    <div class="px-4 py-3 shrink-0 space-y-2 h-[35%] flex flex-col items-center justify-center">
+      <div class="flex justify-between items-center w-[90%] bg-gray-600 px-3 py-2 rounded-xl text-sm">
         <span class="flex items-center space-x-1">
           <span>🌓</span>
           <span>Dark Mode</span>

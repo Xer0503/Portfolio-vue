@@ -46,7 +46,7 @@ function closeNav() {
     <transition name="slide">
       <div
         v-show="navToggle"
-        class="fixed top-0 left-0 z-50 w-[70%] opacity-85 rounded-r-3xl md:hidden"
+        class="fixed top-0 left-0 z-50 w-[70%] bg-gray-900 opacity-85 rounded-r-3xl md:hidden"
       >
         <SidebarMobile />
       </div>
