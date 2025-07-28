@@ -18,6 +18,7 @@ import P from '../../assets/profile.jpg'
 // Dark mode toggle
 const dark = ref(true)
 
+/*
 onMounted(() => {
   const saved = localStorage.getItem('theme')
   dark.value = saved !== 'light' // default to dark
@@ -28,7 +29,7 @@ watch(dark, (val) => {
   html.classList.toggle('dark', val)
   localStorage.setItem('theme', val ? 'dark' : 'light')
 })
-
+*/
 // Navigation items
 const navItems = [
   { id: 1, label: 'Home', icon: Home, iconBlue: HomeBlue },
@@ -46,16 +47,14 @@ function handleNavClick(id) {
 </script>
 
 <template>
-  <div class="flex flex-col h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
+  <div class="flex flex-col h-screen bg-white dark:bg-gray-900 text-black dark:text-white rounded-r-3xl">
     <!-- Profile -->
     <section class="px-4 pt-6 shrink-0 text-center">
-      <img :src="P" alt="Profile" class="w-24 h-24 md:h-34 md:w-34 mx-auto mb-3 rounded-full shadow-md object-cover" />
+      <img :src="P" alt="Profile" class="w-35 h-35 mx-auto mb-3 rounded-full shadow-md object-cover" />
       <p class="text-xl font-bold">Rexie Villanueva</p>
       <p class="text-sm text-gray-300">FullStack Developer</p>
       <a
-        href="/resume.pdf"
-        target="_blank"
-        class="block mt-4 px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded-2xl text-white text-sm"
+        class="block mt-4 w-[50%] py-2 mx-auto bg-gray-600 hover:bg-gray-700 active:bg-blue-500 rounded-2xl text-white text-sm"
       >
         View Resume
       </a>
@@ -87,7 +86,7 @@ function handleNavClick(id) {
           <span>Dark Mode</span>
         </span>
         <button @click="dark = !dark" class="bg-gray-800 px-3 py-1 rounded-full text-white">
-          {{ dark ? 'On' : 'Off' }}
+          on
         </button>
       </div>
       <footer class="text-center text-xs text-gray-400 mt-2">
