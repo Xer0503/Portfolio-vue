@@ -82,7 +82,7 @@ function handleNavClick(id) {
     </nav>
 
     <!-- Footer (sticky bottom) -->
-    <div class="space-y-2 h-[20%] my-auto flex flex-col md:justify-center items-center">
+    <div class="space-y-2 h-[20%] my-auto flex flex-col md:justify-end py-2 items-center">
       <div class="flex justify-between items-center w-[90%] bg-gray-600 px-3 py-2 rounded-xl text-sm">
         <span class="flex space-x-1">
           <span>🌓</span>
