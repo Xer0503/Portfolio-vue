@@ -11,7 +11,7 @@ import CertificateExapnd from './ExpertUI/Certificates.vue'
 import ProjectExpand from './ExpertUI/ProjectExpand.vue'
 import TechnologiesExpand from './ExpertUI/TechnologiesExpand.vue'
 
-const selectCareer = ref(0)
+const selectCareer = ref(null)
 
 const careerStat = [
   { id: 1, view: ExpExpand, heading: 'Experience', icon: Exp, num: 0 },
@@ -29,18 +29,26 @@ const heading = careerStat.reduce((map, item) => {
   map[item.id] = item.heading
   return map
 }, {})
+
+const icon = careerStat.reduce((map, item) => {
+  map[item.id] = item.icon
+  return map
+}, {})
 </script>
 
 <template>
     <!--Card-->
     <section class="px-2 py-3 relative">
         <!--Card Head-->
-        <div class="my-3 md:my-1 px-3">
+        <div class="my-3 md:my-1 px-3 flex space-x-2">
+            <span class="flex items-center">
+              <img src="/verified.svg" alt="verify" class="w-7" />
+            </span>
             <h2 class="text-white font-black text-2xl">Career Stats</h2>
         </div>
 
         <!--Card Body-->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-white">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-white md:py-2 md:px-2.5">
             <div v-for="career in careerStat" 
             :key="career.id"
             @click="selectCareer = career.id" 
@@ -69,7 +77,8 @@ const heading = careerStat.reduce((map, item) => {
         <transition name="pop">
         <div v-if="selectCareer > 0" class="flex flex-col rounded-2xl absolute inset-0 z-50">
             <div class="flex justify-between items-center px-5 py-2">
-                <span>
+                <span class="flex items-center space-x-2.5">
+                    <img :src="icon[selectCareer]" :alt="heading[selectCareer]" class="w-7" />
                     <p class="text-white font-bold text-2xl">{{ heading[selectCareer] }}</p>
                 </span>
                 <span @click="selectCareer = 0">

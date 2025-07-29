@@ -47,9 +47,11 @@ const icon = [
 </script>
 
 <template>
-  <section class="text-white relative overflow-hidden">
+  <section class="text-white relative overflow-hidden py-2 px-2">
     <div class="flex space-x-2 px-3">
-      <span>Logo</span>
+      <span class="flex items-center">
+        <img src="/expert-profile.svg" alt="expert profile" class="w-5" />
+      </span>
       <p class="font-bold text-2xl">Expertise</p>
     </div>
 
