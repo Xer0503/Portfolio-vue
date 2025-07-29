@@ -29,7 +29,23 @@ function prev() {
             class="min-w-full"
         />
     </div>
-    <div class="flex flex-col">
+    <div class="absolute inset-0">
+      <div class="flex justify-between px-1 py-2 w-full h-full">
+          <div class="h-full flex justify-center">
+            <button @click="prev" class="text-white px-4 py-2 rounded-full">
+              <img src="/feature/prev.svg" alt="prev" class="w-10 px-2 py-2 rounded-full" 
+              />
+            </button>
+          </div>
+          <div class="h-full flex justify-center">
+            <button @click="next" class="text-white px-4 py-2">
+              <img src="/feature/next.svg" alt="next" class="w-10 px-2 py-2 rounded-full" 
+              />
+            </button>
+          </div>
+      </div>
+    </div>
+    <div class="flex flex-col py-3">
         <div class="flex space-x-3 justify-center">
             <div
             :class="[
@@ -46,14 +62,6 @@ function prev() {
               'w-3 rounded h-3 transition-transform duration-300',
               currentIndex == 2 ? 'bg-blue-600' : 'bg-white'
             ]"></div>
-        </div>
-        <div class="flex gap-4 py-2">
-            <button @click="prev" class="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-blue-600 active:bg-blue-600">
-              <img src="/feature/prev.svg" alt="prev" class="w-5" />
-            </button>
-            <button @click="next" class="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-blue-600 active:bg-blue-600">
-              <img src="/feature/next.svg" alt="next" class="w-5" />
-            </button>
         </div>
     </div>
   </div>
