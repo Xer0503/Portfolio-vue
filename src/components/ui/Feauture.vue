@@ -33,13 +33,17 @@ function prev() {
       <div class="flex justify-between px-1 py-2 w-full h-full">
           <div class="h-full flex justify-center">
             <button @click="prev" class="text-white px-4 py-2 rounded-full">
-              <img src="/feature/prev.svg" alt="prev" class="w-10 px-2 py-2 rounded-full" 
+              <img v-if="currentIndex != 1" src="/feature/prev.svg" alt="prev" class="w-10 px-2 py-2 rounded-full" 
+              />
+              <img v-else src="/feature/prev-bl.svg" alt="prev" class="w-10 px-2 py-2 rounded-full" 
               />
             </button>
           </div>
           <div class="h-full flex justify-center">
             <button @click="next" class="text-white px-4 py-2">
-              <img src="/feature/next.svg" alt="next" class="w-10 px-2 py-2 rounded-full" 
+              <img v-if="currentIndex != 1" src="/feature/next.svg" alt="next" class="w-10 px-2 py-2 rounded-full" 
+              />
+              <img v-else src="/feature/next-bl.svg" alt="next" class="w-10 px-2 py-2 rounded-full" 
               />
             </button>
           </div>
