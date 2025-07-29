@@ -131,7 +131,6 @@ body {
   opacity: 0;
 }
 
-/* Safari Fix for backdrop blur */
 .backdrop-blur-sm {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

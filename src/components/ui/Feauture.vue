@@ -72,6 +72,8 @@ function prev() {
               'w-3 rounded h-3 transition-transform duration-300',
               currentIndex == 2 ? 'bg-blue-600' : 'bg-white'
             ]"></div>
+
+            
         </div>
     </div>
   </div>
