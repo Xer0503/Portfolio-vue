@@ -5,31 +5,31 @@ import { ref } from 'vue'
 const skills = [
   {
     id: 1,
-    emoji: '🌐',
+    emoji: '/code.svg',
     title: 'Web Development',
     description: 'I build responsive and dynamic websites using modern frontend tools like Vue.js and Tailwind CSS. For the backend, I use Laravel to manage APIs, authentication, and database interactions.'
   },
   {
     id: 2,
-    emoji: '🎨',
+    emoji: '/design.svg',
     title: 'Graphic Design',
     description: 'I create engaging visual content including logos, banners, and UI assets using tools like Adobe Photoshop and Figma to support strong branding and user engagement.'
   },
   {
     id: 3,
-    emoji: '📈',
+    emoji: '/market.svg',
     title: 'Digital Marketing',
     description: 'I utilize SEO strategies, social media engagement, and content marketing to increase online visibility and drive user traffic to digital platforms.'
   },
   {
     id: 4,
-    emoji: '🧠',
+    emoji: '/figma.svg',
     title: 'UI / UX Design',
     description: 'I design intuitive interfaces and smooth user experiences by applying design thinking principles and prototyping in Figma and Adobe XD.'
   },
   {
     id: 5,
-    emoji: '🗃',
+    emoji: '/data.svg',
     title: 'Data Management',
     description: 'I manage and organize structured data using Laravel with MySQL or SQLite, ensuring data integrity, secure storage, and optimized queries.'
   }
@@ -58,7 +58,9 @@ const icon = [
         <a href="#title">
         <div @click="toggles[skill.id].value = !toggles[skill.id].value" class="flex justify-between p-3 cursor-pointer" id="title">
           <div class="flex space-x-2">
-            <span>{{ skill.emoji }}</span>
+            <span>
+              <img :src="skill.emoji" :alt="skill.emoji" class="w-5" />
+            </span>
             <p class="md:text-sm font-bold">{{ skill.title }}</p>
           </div>
           <transition name="dropUp">
