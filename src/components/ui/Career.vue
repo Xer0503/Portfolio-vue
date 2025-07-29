@@ -38,17 +38,17 @@ const icon = careerStat.reduce((map, item) => {
 
 <template>
     <!--Card-->
-    <section class="px-2 py-3 relative">
+    <section class="py-3 relative">
         <!--Card Head-->
-        <div class="my-3 md:my-1 px-3 flex space-x-2">
-            <span class="flex items-center">
+        <div class="py-2.5 md:my-1 px-2.5 flex space-x-2">
+            <span class="flex">
               <img src="/verified.svg" alt="verify" class="w-7" />
             </span>
             <h2 class="text-white font-black text-2xl">Career Stats</h2>
         </div>
 
         <!--Card Body-->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-white md:py-2 md:px-2.5">
+        <div class="grid grid-cols-2 md:grid-cols-4 px-2 gap-2 text-white md:py-2 md:px-2.5">
             <div v-for="career in careerStat" 
             :key="career.id"
             @click="selectCareer = career.id" 

@@ -17,7 +17,13 @@ function prev() {
 </script>
 
 <template>
-  <div class="relative w-full flex flex-col items-center overflow-hidden rounded-2xl">
+  <div class="relative w-full flex flex-col overflow-hidden rounded-2xl">
+    <div class="flex space-x-2.5 px-3 py-3.5">
+      <span>
+        <img src="/pin.svg" alt="Feature" class="w-7" />
+      </span>
+      <p class="text-white font-bold text-2xl">Feature</p>
+    </div>
     <div
     class="flex transition-transform duration-300 ease-in-out"
     :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
@@ -29,7 +35,7 @@ function prev() {
             class="min-w-full"
         />
     </div>
-    <div class="absolute inset-0">
+    <div class="absolute inset-0 text-center">
       <div class="flex justify-between px-1 py-2 w-full h-full">
           <div class="h-full flex justify-center">
             <button @click="prev" class="text-white px-4 py-2 rounded-full">
